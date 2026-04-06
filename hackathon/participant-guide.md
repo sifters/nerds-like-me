@@ -65,7 +65,7 @@ Without skills: the chef guesses. With skills: the chef executes.
 
 ### What Exactly Is a Skill?
 
-A skill is **a markdown file that teaches an AI agent how to perform a specific task.**
+A skill is **a folder containing a `SKILL.md` file** that teaches an AI agent how to perform a specific task. The folder can also include supporting files: scripts, templates, reference documents, or subdirectories.
 
 That's it. No compilers, no deployment pipelines, no SDKs. It's structured instructions in a text file, optionally accompanied by scripts, reference documents, and templates.
 
