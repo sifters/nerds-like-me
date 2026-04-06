@@ -3,719 +3,330 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NLM Agent Skill Hackathon</title>
-  <meta name="description" content="Pop-up Hackathon: AI Agent Skills — April 7, 2026. A 2.5-hour zero-to-hero session on building AI agent skills.">
-  <meta property="og:title" content="NLM Agent Skill Hackathon">
-  <meta property="og:description" content="Build your first AI agent skill in 40 minutes. April 7, 2026. Highwood, IL.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://shertokj.github.io/nerds-like-me/hackathon/">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="NLM Agent Skill Hackathon">
-  <meta name="twitter:description" content="Build your first AI agent skill in 40 minutes. April 7, 2026.">
+  <title>AI Agent Skills Hackathon — Nerds Like Me</title>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <meta name="description" content="Build a working AI agent skill in 2.5 hours. No coding experience needed. Tuesday April 7th, Highwood IL.">
+  <meta property="og:title" content="AI Agent Skills Hackathon — Nerds Like Me">
+  <meta property="og:description" content="Teach AI to do the work you already do. 2.5 hours, you'll leave with a skill that saves you 30+ minutes per week.">
+  <meta property="og:type" content="website">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- NAV -->
-  <header class="nav">
-    <div class="nav-inner">
-      <a href="#" class="nav-brand">⚡ NLM</a>
-      <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menu">☰</button>
-      <nav class="nav-links">
-        <a href="#agenda">Agenda</a>
-        <a href="#learn">Learn</a>
-        <a href="#projects">Projects</a>
-        <a href="#prepare">Prepare</a>
-        <a href="#cheatsheet">Cheat Sheet</a>
-        <a href="#resources">Resources</a>
-      </nav>
+<!-- Nav -->
+<nav>
+  <div class="container">
+    <a href="#" class="nav-brand">⚡ NLM Hackathon</a>
+    <ul class="nav-links">
+      <li><a href="#who">Who</a></li>
+      <li><a href="#build">Build</a></li>
+      <li><a href="#how">How</a></li>
+      <li><a href="#agenda">Agenda</a></li>
+      <li><a href="#bring">Prep</a></li>
+      <li><a href="#rsvp" class="nav-cta">RSVP</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="container">
+    <h1>Teach AI to do the work<br>you already do.</h1>
+    <p class="tagline">Automate the repetitive parts of your job — in one evening, no coding required.</p>
+    <div class="hero-meta">
+      <span>📅 Tuesday, April 7th, 2026</span>
+      <span>🕐 7:15 – 9:30 PM CDT</span>
+      <span>📍 Highwood, IL</span>
     </div>
-  </header>
+    <a href="#rsvp" class="btn btn-primary">Register Now</a>
+    <p class="social-proof"><strong>18 attendees</strong> from BMO, UBS, Endeavor Health, Follett, Mesirow, Gallagher &amp; more</p>
+  </div>
+</section>
 
-  <main>
+<!-- Who This Is For -->
+<section id="who">
+  <div class="container">
+    <p class="section-label">Who This Is For</p>
+    <h2 class="section-title">Not a developer? Good.</h2>
+    <p class="section-desc">This is about automating the work you already do — not learning to code. Every role listed here has real, buildable projects waiting.</p>
+    <div class="roles-grid">
+      <div class="role-badge"><span class="icon">💼</span> Product Managers</div>
+      <div class="role-badge"><span class="icon">📊</span> Analysts</div>
+      <div class="role-badge"><span class="icon">🏥</span> Healthcare</div>
+      <div class="role-badge"><span class="icon">💰</span> Finance</div>
+      <div class="role-badge"><span class="icon">🏗️</span> Engineers</div>
+      <div class="role-badge"><span class="icon">🎯</span> Recruiters</div>
+      <div class="role-badge"><span class="icon">📈</span> Founders &amp; CEOs</div>
+      <div class="role-badge"><span class="icon">🎓</span> Learning &amp; Development</div>
+    </div>
+    <div class="inclusive-note">
+      You don't need a technical background. If you do repetitive work that follows a pattern — writing emails, formatting reports, taking notes, prepping meetings — you can build a skill that handles it for you.
+    </div>
+  </div>
+</section>
 
-    <!-- HERO -->
-    <section class="hero" id="hero">
-      <div class="hero-glow"></div>
-      <div class="hero-badge">Pop-up Hackathon</div>
-      <h1 class="hero-title">Agent Skill Hackathon</h1>
-      <p class="hero-sub">Zero to hero — build your first AI agent skill in 40 minutes</p>
-      <div class="hero-cards">
-        <div class="hero-card">
-          <div class="hero-card-icon">📅</div>
-          <div class="hero-card-label">When</div>
-          <div class="hero-card-value">Tue, Apr 7, 2026</div>
-          <div class="hero-card-sub">7:15 – 9:30 PM CDT</div>
-        </div>
-        <div class="hero-card">
-          <div class="hero-card-icon">📍</div>
-          <div class="hero-card-label">Where</div>
-          <div class="hero-card-value">Highwood, IL</div>
-          <div class="hero-card-sub">Details on RSVP</div>
-        </div>
-        <div class="hero-card">
-          <div class="hero-card-icon">👥</div>
-          <div class="hero-card-label">Attendees</div>
-          <div class="hero-card-value">18</div>
-          <div class="hero-card-sub">And counting</div>
-        </div>
-        <div class="hero-card">
-          <div class="hero-card-icon">💻</div>
-          <div class="hero-card-label">Platforms</div>
-          <div class="hero-card-value">OpenClaw</div>
-          <div class="hero-card-sub">+ Claude Code</div>
-        </div>
+<!-- What You'll Build -->
+<section id="build">
+  <div class="container">
+    <p class="section-label">What You'll Build</p>
+    <h2 class="section-title">Role-specific projects, ready to ship.</h2>
+    <p class="section-desc">Pick a project that matches your actual job. You'll walk out with something you use the next day.</p>
+    <div class="build-grid">
+      <div class="build-card">
+        <div class="card-icon">📋</div>
+        <h3>Product Managers</h3>
+        <p>Automate PRD first drafts, A/B test summaries, sprint retrospectives, and stakeholder updates.</p>
       </div>
-    </section>
-
-    <!-- AGENDA TIMELINE -->
-    <section class="section" id="agenda">
-      <div class="section-label">Schedule</div>
-      <h2 class="section-title">Agenda</h2>
-      <div class="timeline">
-
-        <div class="timeline-item" data-phase="social">
-          <div class="timeline-marker"></div>
-          <div class="timeline-content">
-            <div class="timeline-header">
-              <span class="timeline-time">7:15 PM</span>
-              <span class="timeline-badge social">Social</span>
-            </div>
-            <h3>Socialize & Settle</h3>
-            <p>Arrive, grab drinks, find a seat, informal chat. Get comfortable.</p>
-          </div>
-        </div>
-
-        <div class="timeline-item" data-phase="social">
-          <div class="timeline-marker"></div>
-          <div class="timeline-content">
-            <div class="timeline-header">
-              <span class="timeline-time">7:30 PM</span>
-              <span class="timeline-badge social">Social</span>
-            </div>
-            <h3>Kickoff & Framing</h3>
-            <p>Jonathan frames the session, sets expectations, introduces the Chef & Recipe mental model.</p>
-          </div>
-        </div>
-
-        <div class="timeline-item" data-phase="training">
-          <div class="timeline-marker"></div>
-          <div class="timeline-content">
-            <div class="timeline-header">
-              <span class="timeline-time">7:45 PM</span>
-              <span class="timeline-badge training">Training</span>
-            </div>
-            <h3>Training Sprint</h3>
-            <p>Fast-paced beginner training on agent skills. 30 minutes of pure signal.</p>
-          </div>
-        </div>
-
-        <div class="timeline-item" data-phase="training">
-          <div class="timeline-marker"></div>
-          <div class="timeline-content">
-            <div class="timeline-header">
-              <span class="timeline-time">8:15 PM</span>
-              <span class="timeline-badge training">Training</span>
-            </div>
-            <h3>Project Selection</h3>
-            <p>Pick a tier/challenge or propose your own.</p>
-          </div>
-        </div>
-
-        <div class="timeline-item" data-phase="build">
-          <div class="timeline-marker"></div>
-          <div class="timeline-content">
-            <div class="timeline-header">
-              <span class="timeline-time">8:20 PM</span>
-              <span class="timeline-badge build">Build</span>
-            </div>
-            <h3>Build Time</h3>
-            <p>Hands-on building. 40 minutes to ship something. Jonathan circulates to unblock.</p>
-          </div>
-        </div>
-
-        <div class="timeline-item" data-phase="demo">
-          <div class="timeline-marker"></div>
-          <div class="timeline-content">
-            <div class="timeline-header">
-              <span class="timeline-time">9:00 PM</span>
-              <span class="timeline-badge demo">Demo</span>
-            </div>
-            <h3>Demo Showcase</h3>
-            <p>Lightning demos — 60-90 sec each. Show what you built, what you learned, what didn't work.</p>
-          </div>
-        </div>
-
-        <div class="timeline-item" data-phase="demo">
-          <div class="timeline-marker"></div>
-          <div class="timeline-content">
-            <div class="timeline-header">
-              <span class="timeline-time">9:25 PM</span>
-              <span class="timeline-badge demo">Demo</span>
-            </div>
-            <h3>Wrap-up</h3>
-            <p>Key takeaways, next steps, how to keep building.</p>
-          </div>
-        </div>
-
+      <div class="build-card">
+        <div class="card-icon">📈</div>
+        <h3>Analysts</h3>
+        <p>Generate weekly status reports, format client deliverables, build dashboard specs from stakeholder requests.</p>
       </div>
-    </section>
-
-    <!-- WHAT YOU'LL LEARN -->
-    <section class="section" id="learn">
-      <div class="section-label">Training</div>
-      <h2 class="section-title">What You'll Learn</h2>
-      <p class="section-desc">The goal isn't mastery — it's enough understanding to start building. Here's the sprint breakdown.</p>
-
-      <!-- LIVE DEMO — highlighted -->
-      <div class="demo-highlight">
-        <div class="demo-highlight-badge">⭐ Live Demo — Build a Skill in 5 Minutes</div>
-        <p>We'll build a <strong>Weekly Status Update</strong> skill — something everyone does.</p>
-        <div class="demo-steps">
-          <div class="demo-step">
-            <div class="demo-step-num">1</div>
-            <div>
-              <strong>Create the folder</strong>
-              <pre><code>mkdir -p ~/.openclaw/workspace/skills/weekly-status-update</code></pre>
-            </div>
-          </div>
-          <div class="demo-step">
-            <div class="demo-step-num">2</div>
-            <div>
-              <strong>Write SKILL.md</strong>
-              <pre><code>---
-name: weekly-status-update
-description: Generate a structured weekly status update from rough notes.
----
-
-Take the rough weekly update notes and turn them into a structured status update.
-
-## Required Sections
-1. **Accomplishments This Week** (bullet points, max 5)
-2. **Priorities for Next Week** (bullet points, max 5)
-3. **Blockers & Risks** (anything that needs attention)
-4. **Key Metrics / Numbers** (any quantifiable results)
-
-## Rules
-- Don't invent accomplishments not in the raw notes
-- Keep the total output under 200 words
-- Flag anything time-sensitive with ⚠️</code></pre>
-            </div>
-          </div>
-          <div class="demo-step">
-            <div class="demo-step-num">3</div>
-            <div>
-              <strong>Test it</strong>
-              <pre><code>/new
-"Here's what I did this week: [paste rough notes]"</code></pre>
-            </div>
-          </div>
-        </div>
-        <p class="demo-highlight-cta">That's the entire cycle. <strong>From zero to working skill in under 5 minutes.</strong></p>
+      <div class="build-card">
+        <div class="card-icon">🏥</div>
+        <h3>Healthcare</h3>
+        <p>Structure shift handoff notes, summarize patient education materials, generate clinical protocol checklists.</p>
       </div>
-
-      <!-- Accordion sections -->
-      <div class="accordion-group">
-
-        <div class="accordion">
-          <button class="accordion-toggle" onclick="toggleAccordion(this)">
-            <span>The Record-Transcribe-Refine Method</span>
-            <span class="accordion-arrow">▾</span>
-          </button>
-          <div class="accordion-body">
-            <div class="accordion-inner">
-              <ol>
-                <li><strong>Record</strong> how you do something right now (screen recording, voice memo, or write down the steps)</li>
-                <li><strong>Transcribe</strong> what you recorded into plain language</li>
-                <li><strong>Feed it to AI</strong> and say: "Turn this into a SKILL.md for [platform]"</li>
-                <li><strong>Review and refine</strong> the output — fix gaps, add edge cases, test it</li>
-                <li><strong>Ship it</strong> and iterate based on how it performs</li>
-              </ol>
-              <blockquote>Why this works: You already have workflows you do manually. The skill is just capturing that expertise in a format an AI can follow. You're not inventing from scratch — you're documenting what you already know.</blockquote>
-            </div>
-          </div>
-        </div>
-
-        <div class="accordion">
-          <button class="accordion-toggle" onclick="toggleAccordion(this)">
-            <span>Anatomy of a Skill — The Chef & Recipe Model</span>
-            <span class="accordion-arrow">▾</span>
-          </button>
-          <div class="accordion-body">
-            <div class="accordion-inner">
-              <p>A general-purpose AI agent is the <strong>Chef</strong> — it knows how to cook. An AI Skill is the <strong>Recipe</strong> — a modular, reusable package of instructions. Without skills: the chef guesses. With skills: the chef executes precisely.</p>
-              <pre><code>my-skill/
-├── SKILL.md              (required — the recipe)
-├── scripts/              (optional — executable code)
-│   └── validate.sh
-├── references/           (optional — docs loaded on demand)
-│   └── api-docs.md
-└── assets/               (optional — templates, images)
-    └── template.md</code></pre>
-              <p>SKILL.md has two parts: <strong>YAML Frontmatter</strong> (name, description) + <strong>Markdown Body</strong> (step-by-step instructions). A working skill can be as little as a 10-line markdown file.</p>
-              <div class="callout">Unlike recipes, skills are non-deterministic. The same skill may produce slightly different output each time. This is normal — treat skills as rough drafts that get better with iteration.</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="accordion">
-          <button class="accordion-toggle" onclick="toggleAccordion(this)">
-            <span>Terminal 101 & Setup</span>
-            <span class="accordion-arrow">▾</span>
-          </button>
-          <div class="accordion-body">
-            <div class="accordion-inner">
-              <p>Three commands you need:</p>
-              <pre><code>mkdir folder-name     # Create a new folder
-cd folder-name         # Go into a folder
-cat filename           # Read a file's contents</code></pre>
-              <p><strong>OpenClaw setup:</strong></p>
-              <ul>
-                <li>Sign up at <a href="https://campclaw.ai/">campclaw.ai</a> (free sandbox) or install locally at <a href="https://openclaw.ai">openclaw.ai</a></li>
-                <li>Skills live in <code>~/.openclaw/workspace/skills/&lt;name&gt;/SKILL.md</code></li>
-                <li>Install community skills: <code>openclaw skills install &lt;name&gt;</code></li>
-                <li>Browse skills: <a href="https://clawhub.com">clawhub.com</a></li>
-              </ul>
-              <pre><code>openclaw skills list             # See all loaded skills
-openclaw skills install &lt;name&gt;    # Install from ClawHub</code></pre>
-            </div>
-          </div>
-        </div>
-
-        <div class="accordion">
-          <button class="accordion-toggle" onclick="toggleAccordion(this)">
-            <span>Common Gotchas</span>
-            <span class="accordion-arrow">▾</span>
-          </button>
-          <div class="accordion-body">
-            <div class="accordion-inner">
-              <ul>
-                <li><strong>Skills should DO things, not TEACH things.</strong> Give focused execution steps.</li>
-                <li><strong>Keep scope narrow.</strong> One skill, one job.</li>
-                <li><strong>Test early with real inputs.</strong> Don't wait until it's "perfect."</li>
-                <li><strong>The description field matters.</strong> That's how the agent discovers your skill.</li>
-                <li><strong>First output won't be perfect.</strong> Iterate on the instructions, not the prompt.</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <div class="accordion">
-          <button class="accordion-toggle" onclick="toggleAccordion(this)">
-            <span>Troubleshooting</span>
-            <span class="accordion-arrow">▾</span>
-          </button>
-          <div class="accordion-body">
-            <div class="accordion-inner">
-              <div class="trouble-grid">
-                <div class="trouble-item">
-                  <strong>Skill not triggering</strong>
-                  <span>Description doesn't match use case → make it more specific</span>
-                </div>
-                <div class="trouble-item">
-                  <strong>Output format wrong</strong>
-                  <span>Instructions too vague → add explicit format examples</span>
-                </div>
-                <div class="trouble-item">
-                  <strong>Agent ignores the skill</strong>
-                  <span>Description doesn't cover use case → rewrite to match natural language</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
+      <div class="build-card">
+        <div class="card-icon">💼</div>
+        <h3>Finance &amp; Real Estate</h3>
+        <p>Draft deal screening memos, build scenario analysis templates, format IC memos and client meeting notes.</p>
       </div>
-    </section>
-
-    <!-- PROJECT TIERS -->
-    <section class="section" id="projects">
-      <div class="section-label">Build</div>
-      <h2 class="section-title">Pick Your Project</h2>
-      <p class="section-desc">Choose a tier that matches your experience. Solo + optional pairing. 2-3 people per table recommended.</p>
-
-      <div class="tiers">
-
-        <!-- Tier 1 -->
-        <div class="tier">
-          <div class="tier-header">
-            <span class="tier-label beginner">Beginner</span>
-            <span class="tier-time">15–20 min</span>
-          </div>
-          <h3 class="tier-name">First Skill</h3>
-          <p class="tier-goal">Build your first working skill. Ship something.</p>
-          <div class="project-cards">
-            <div class="project-card">
-              <h4>Client Follow-Up Email Formatter</h4>
-              <p>Takes rough meeting notes and formats a professional follow-up email.</p>
-              <span class="diff-badge beginner">Beginner</span>
-            </div>
-            <div class="project-card">
-              <h4>Weekly Status Update Generator</h4>
-              <p>Prompts for accomplishments, priorities, blockers — formats a clean update.</p>
-              <span class="diff-badge beginner">Beginner</span>
-            </div>
-            <div class="project-card">
-              <h4>Meeting Notes Formatter</h4>
-              <p>Takes raw meeting notes and outputs a structured summary with action items.</p>
-              <span class="diff-badge beginner">Beginner</span>
-            </div>
-            <div class="project-card">
-              <h4>File Analyzer</h4>
-              <p>Reads a code file and reports: language, line count, functions/classes, TODOs.</p>
-              <span class="diff-badge beginner">Beginner</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Tier 2 -->
-        <div class="tier">
-          <div class="tier-header">
-            <span class="tier-label intermediate">Intermediate</span>
-            <span class="tier-time">25–30 min</span>
-          </div>
-          <h3 class="tier-name">Practical Tool</h3>
-          <p class="tier-goal">Build something you'd actually use at work.</p>
-          <div class="project-cards">
-            <div class="project-card">
-              <h4>GitHub Issue Summarizer</h4>
-              <p>Takes a GitHub issue URL, fetches it, produces a concise summary.</p>
-              <span class="diff-badge intermediate">Intermediate</span>
-            </div>
-            <div class="project-card">
-              <h4>Email Drafter</h4>
-              <p>Takes context and drafts a professional email with subject line.</p>
-              <span class="diff-badge intermediate">Intermediate</span>
-            </div>
-            <div class="project-card">
-              <h4>Config File Validator</h4>
-              <p>Reads a JSON/YAML config and checks for common mistakes.</p>
-              <span class="diff-badge intermediate">Intermediate</span>
-            </div>
-            <div class="project-card">
-              <h4>Weather Briefing</h4>
-              <p>Fetches weather and formats a morning briefing with suggestions.</p>
-              <span class="diff-badge intermediate">Intermediate</span>
-            </div>
-            <div class="project-card">
-              <h4>LinkedIn Post Writer</h4>
-              <p>Takes a topic and writes a LinkedIn post in your voice.</p>
-              <span class="diff-badge intermediate">Intermediate</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Tier 3 -->
-        <div class="tier">
-          <div class="tier-header">
-            <span class="tier-label advanced">Take-Home</span>
-            <span class="tier-time">Start tonight</span>
-          </div>
-          <h3 class="tier-name">Advanced Challenges</h3>
-          <p class="tier-goal">Build a skill with scripts, references, or multi-step workflows.</p>
-          <div class="project-cards">
-            <div class="project-card">
-              <h4>PR Review Bot</h4>
-              <p>Reads a git diff, checks for security issues and test coverage gaps.</p>
-              <span class="diff-badge advanced">Advanced</span>
-            </div>
-            <div class="project-card">
-              <h4>Brand Voice Checker</h4>
-              <p>Checks text against brand guidelines in references/.</p>
-              <span class="diff-badge advanced">Advanced</span>
-            </div>
-            <div class="project-card">
-              <h4>Data Pipeline Skill</h4>
-              <p>Takes a CSV, performs transformations via scripts/transform.py.</p>
-              <span class="diff-badge advanced">Advanced</span>
-            </div>
-            <div class="project-card">
-              <h4>Multi-Source Research</h4>
-              <p>Searches multiple sources and synthesizes a brief report.</p>
-              <span class="diff-badge advanced">Advanced</span>
-            </div>
-            <div class="project-card">
-              <h4>Skill That Spawns Sub-Agents</h4>
-              <p>Uses sessions_spawn to delegate research and synthesize results.</p>
-              <span class="diff-badge advanced">Advanced</span>
-            </div>
-          </div>
-        </div>
-
+      <div class="build-card">
+        <div class="card-icon">⚙️</div>
+        <h3>Engineers</h3>
+        <p>Automate PR reviews, triage GitHub issues, validate configs, and generate code review comments.</p>
       </div>
-
-      <div class="wildcard">
-        <span class="wildcard-icon">🎲</span>
-        <p><strong>Wildcard:</strong> Propose your own project. Must be buildable in 40 minutes, solve a real problem, and produce a demonstrable result.</p>
-      </div>
-    </section>
-
-    <!-- PREPARE -->
-    <section class="section" id="prepare">
-      <div class="section-label">Before You Arrive</div>
-      <h2 class="section-title">What to Prepare</h2>
-
-      <div class="prepare-grid">
-        <div class="prepare-card">
-          <h3>✅ Must Have</h3>
-          <ul>
-            <li><strong>Laptop</strong> with working internet</li>
-            <li><strong>OpenClaw account</strong> — <a href="https://campclaw.ai/">campclaw.ai</a> (free sandbox) or install locally</li>
-            <li><strong>Claude Code</strong> (alternative): <code>npm install -g @anthropic-ai/claude-code</code></li>
-            <li><strong>A code editor</strong> (VS Code recommended)</li>
-            <li><strong>Terminal access</strong></li>
-          </ul>
-        </div>
-        <div class="prepare-card">
-          <h3>🎯 Nice to Have</h3>
-          <ul>
-            <li>A specific problem or annoying workflow you want to automate</li>
-            <li>Familiarity with basic CLI commands (mkdir, cd, cat)</li>
-            <li>An API key if you want to call external services</li>
-          </ul>
-        </div>
-      </div>
-      <div class="homework-note">
-        <span>📺</span> <strong>Optional pre-event homework (15 min):</strong> Watch <a href="https://www.youtube.com/watch?v=NU6wRAT9VQ0">Introduction to Agent Skills</a>
-      </div>
-    </section>
-
-    <!-- DEMO SHOWCASE -->
-    <section class="section" id="demos">
-      <div class="section-label">Showcase</div>
-      <h2 class="section-title">Demo Showcase</h2>
-      <p class="section-desc"><strong>Lightning demos</strong> — 60–90 seconds per person/team. No slides.</p>
-      <div class="demo-rules">
-        <div class="demo-rule">🎤 <span>Show the skill working (live demo or screenshot)</span></div>
-        <div class="demo-rule">📋 <span>State: what it does, what tier, one thing learned, one thing that didn't work</span></div>
-        <div class="demo-rule">🔄 <span>Go around the room in order</span></div>
-      </div>
-      <p class="demo-note">If attendance is higher than expected, we'll group demos by tier. Celebrate failures openly — "What didn't work" is as valuable as "what worked."</p>
-    </section>
-
-    <!-- CHEAT SHEET -->
-    <section class="section" id="cheatsheet">
-      <div class="section-label">Reference</div>
-      <h2 class="section-title">Cheat Sheet <span class="print-hint">— Ctrl+P to print</span></h2>
-
-      <div class="cheat-card">
-        <div class="cheat-row">
-          <div class="cheat-block">
-            <h4>🚀 Create a Skill (3 steps)</h4>
-            <pre><code>1. mkdir -p ~/.openclaw/workspace/skills/my-skill
-2. Create SKILL.md inside that folder
-3. /new then ask the agent to use it</code></pre>
-          </div>
-          <div class="cheat-block">
-            <h4>📝 SKILL.md Template</h4>
-            <pre><code>---
-name: my-skill
-description: What it does & when to trigger it
----
-
-# Instructions for the agent here
-1. Step one
-2. Step two
-3. Output format</code></pre>
-          </div>
-        </div>
-        <div class="cheat-row">
-          <div class="cheat-block">
-            <h4>📂 OpenClaw Paths</h4>
-            <pre><code>Workspace:  ~/.openclaw/workspace/skills/&lt;name&gt;/
-Shared:    ~/.openclaw/skills/&lt;name&gt;/
-Install:   openclaw skills install &lt;name&gt;
-List:      openclaw skills list</code></pre>
-          </div>
-          <div class="cheat-block">
-            <h4>🔄 The Workflow</h4>
-            <ol>
-              <li>Record something you do (screen/voice/steps)</li>
-              <li>Feed to AI: "Turn this into a SKILL.md"</li>
-              <li>Review & refine the output</li>
-              <li>Test it, ship it, iterate</li>
-            </ol>
-          </div>
-        </div>
-        <div class="cheat-row">
-          <div class="cheat-block full">
-            <h4>💡 Pro Tips</h4>
-            <ul>
-              <li>Keep SKILL.md under 500 lines</li>
-              <li>Put reference docs in <code>references/</code></li>
-              <li>Put executable scripts in <code>scripts/</code></li>
-              <li>Description field = how the agent finds it</li>
-              <li>Test early, test often</li>
-              <li>Skills can chain other skills</li>
-              <li>Use ClawHub to share with the community</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- FACILITATOR ONLY (collapsed) -->
-    <section class="section" id="facilitator-only">
-      <div class="facilitator-toggle" onclick="toggleFacilitator()">
-        <span>🔒 Facilitator Notes & Advanced Topics</span>
-        <span class="facilitator-arrow" id="facilitator-arrow">▾</span>
-      </div>
-      <div class="facilitator-content" id="facilitator-content">
-
-        <div class="section" style="margin-bottom: 32px;">
-          <h2 class="section-title">Advanced Topics</h2>
-          <p class="section-desc">Not covered in the training sprint — next steps for deeper exploration.</p>
-
-          <h3>Skill Chaining</h3>
-          <p>Skills can reference other skills in their instructions. Example: A <code>weekly-report</code> skill that chains the <code>meeting-notes</code> and <code>github-issues</code> skills to compose complex workflows from simple building blocks.</p>
-
-          <h3>Multi-Agent Orchestration (OpenClaw)</h3>
-          <ul>
-            <li><strong>Sub-agents:</strong> Spawn a separate agent to handle a task while the main agent continues</li>
-            <li><strong>Task Flow:</strong> Durable multi-step workflow orchestration with state tracking</li>
-            <li><strong>Lobster:</strong> Deterministic pipeline runtime with built-in approval gates</li>
-          </ul>
-
-          <h3>Progressive Disclosure with References</h3>
-          <p>The <code>references/</code> directory holds supplementary docs loaded only when needed, keeping SKILL.md concise while having deep domain knowledge available.</p>
-
-          <h3>Publishing to ClawHub</h3>
-          <pre><code>clawhub sync --all        # Sync all workspace skills
-clawhub publish &lt;path&gt;   # Publish a specific skill</code></pre>
-        </div>
-
-        <div class="section">
-          <h2 class="section-title">Facilitator Notes</h2>
-
-          <h3>Before the Event</h3>
-          <ul class="checklist">
-            <li>Confirm venue has reliable WiFi</li>
-            <li>Confirm venue has power outlets for ~18 laptops</li>
-            <li>Pre-load the training demo and test it in OpenClaw</li>
-            <li>Have a backup offline activity if internet fails</li>
-            <li>Print a one-page cheat sheet</li>
-          </ul>
-
-          <h3>During Training</h3>
-          <ul>
-            <li>Keep pace aggressive — this is a sprint, not a lecture</li>
-            <li>Emphasize Record-Transcribe-Refine as the primary workflow</li>
-            <li>"Don't start from a blank page. Start from something you already do."</li>
-          </ul>
-
-          <h3>During Build Time</h3>
-          <ul>
-            <li>Announce time checks at 20 min and 35 min</li>
-            <li>If someone is stuck, suggest they drop a tier</li>
-            <li>Encourage peer help at tables</li>
-          </ul>
-
-          <h3>During Demos</h3>
-          <ul>
-            <li>Celebrate failures openly — "What didn't work" is as valuable as "what worked"</li>
-            <li>Highlight any skills that could be published to ClawHub</li>
-          </ul>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- RESOURCES -->
-    <section class="section" id="resources">
-      <div class="section-label">Links</div>
-      <h2 class="section-title">Resources</h2>
-
-      <div class="resource-grid">
-        <div class="resource-col">
-          <h3>Official Docs</h3>
-          <ul>
-            <li><a href="https://agentskills.io/home">AgentSkills Spec</a></li>
-            <li><a href="https://clawhub.com">ClawHub</a> — Skill marketplace</li>
-            <li><a href="https://openclaw.ai">OpenClaw Docs</a></li>
-            <li><a href="https://campclaw.ai/">CampClaw</a> — Sandbox</li>
-            <li><a href="https://docs.anthropic.com/en/docs/claude-code">Claude Code Docs</a></li>
-          </ul>
-        </div>
-        <div class="resource-col">
-          <h3>Tutorials</h3>
-          <ul>
-            <li><a href="https://www.youtube.com/watch?v=NU6wRAT9VQ0">Intro to Agent Skills (Video)</a></li>
-            <li><a href="https://alexop.dev/posts/claude-code-customization-guide-claudemd-skills-subagents/">Claude Code Customization</a></li>
-            <li><a href="https://supalaunch.com/blog/claude-code-skills-tutorial-custom-slash-commands-and-automations-guide">Skills Tutorial</a></li>
-          </ul>
-        </div>
-        <div class="resource-col">
-          <h3>Skill Repos</h3>
-          <ul>
-            <li><a href="https://github.com/anthropics/skills/tree/main">Anthropic Skills Repo</a></li>
-            <li><a href="https://skills.sh/">Skills.sh</a></li>
-            <li><a href="https://play.aidailybrief.ai/episodes/skills-master-class/">Skills Master Class (Audio)</a></li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- NEXT STEPS -->
-    <section class="section" id="next-steps">
-      <div class="section-label">After</div>
-      <h2 class="section-title">Post-Event Next Steps</h2>
-      <div class="next-steps">
-        <div class="next-step"><strong>Publish standout skills to ClawHub</strong> — <code>clawhub sync --all</code> or <code>clawhub publish &lt;path&gt;</code></div>
-        <div class="next-step"><strong>Share a recap post</strong> on NLM X/Twitter with highlights and photos</div>
-        <div class="next-step"><strong>Create a follow-up event</strong> for advanced topics (skill chaining, sub-agents, Lobster workflows)</div>
-        <div class="next-step"><strong>Collect feedback</strong> via a short form</div>
-        <div class="next-step"><strong>Build a "NLM Skills" collection</strong> on ClawHub with all participant skills</div>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- FOOTER -->
-  <footer>
-    <div class="footer-inner">
-      <div class="footer-brand">
-        <span class="footer-logo">⚡ Nerds Like Me</span>
-        <span class="footer-tagline">Building the future, one skill at a time.</span>
-      </div>
-      <div class="footer-links">
-        <a href="https://shertokj.github.io/nerds-like-me/hackathon/">Event Page</a>
-        <a href="https://github.com/shertokj/nerds-like-me">GitHub</a>
-        <a href="https://clawhub.com">ClawHub</a>
+      <div class="build-card">
+        <div class="card-icon">🤝</div>
+        <h3>Recruiters &amp; Outreach</h3>
+        <p>Format follow-up emails, generate interview prep kits, personalize cold outreach at scale.</p>
       </div>
     </div>
-  </footer>
+  </div>
+</section>
 
-  <script>
-    function toggleAccordion(btn) {
-      const isOpen = btn.classList.contains('open');
-      // Close all in same group
-      const group = btn.closest('.accordion-group');
-      group.querySelectorAll('.accordion-toggle.open').forEach(b => {
-        b.classList.remove('open');
-        b.nextElementSibling.style.maxHeight = null;
-      });
-      if (!isOpen) {
-        btn.classList.add('open');
-        const body = btn.nextElementSibling;
-        body.style.maxHeight = body.scrollHeight + 'px';
-      }
+<!-- How It Works -->
+<section id="how">
+  <div class="container">
+    <p class="section-label">How It Works</p>
+    <h2 class="section-title">Four steps. Zero prerequisites.</h2>
+    <p class="section-desc">Think of an AI agent as a chef who can cook anything. A skill is the recipe. You're writing the recipe for work you already know how to do.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="step-number">1</div>
+        <h3>Record</h3>
+        <p>Pick something annoying you do manually — a weekly report, a handoff note, a follow-up email.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">2</div>
+        <h3>AI writes the recipe</h3>
+        <p>Describe the steps to an AI. It generates a structured skill file — your "recipe" — in seconds.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">3</div>
+        <h3>Test &amp; refine</h3>
+        <p>Run it with real data. Tweak the instructions until the output matches what you'd produce yourself.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">4</div>
+        <h3>Ship it</h3>
+        <p>Your skill is ready. Use it daily. Share it with your team. Publish it for others.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ROI Banner -->
+<section>
+  <div class="container">
+    <div class="roi-banner">
+      <h2>2.5 hours. One working skill.</h2>
+      <p>You'll leave with something that saves you <strong style="color:var(--text);">30+ minutes per week</strong> — starting tomorrow.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Tier Selector -->
+<section>
+  <div class="container">
+    <p class="section-label">Find Your Level</p>
+    <h2 class="section-title">Where should you start?</h2>
+    <div class="tier-selector">
+      <div class="tier-question">
+        <h4>Do you have a technical background?</h4>
+        <div class="tier-options">
+          <div class="tier-option" data-q="1" data-v="no">No</div>
+          <div class="tier-option" data-q="1" data-v="yes">Yes</div>
+        </div>
+      </div>
+      <div class="tier-question">
+        <h4>Do you code regularly?</h4>
+        <div class="tier-options">
+          <div class="tier-option" data-q="2" data-v="no">No</div>
+          <div class="tier-option" data-q="2" data-v="yes">Yes</div>
+        </div>
+      </div>
+      <div class="tier-results">
+        <div class="tier-result-box beginner" id="tier-beginner">
+          <h4>🌱 Beginner</h4>
+          <p>Perfect. Start with the Record-Transcribe-Refine method. You'll build a working skill using just natural language — no code needed. Recommended: Client Follow-Up Email Formatter or Weekly Status Update Generator.</p>
+        </div>
+        <div class="tier-result-box intermediate" id="tier-intermediate">
+          <h4>🔥 Intermediate</h4>
+          <p>You've got the foundation. You can tackle richer skills with structured output, references, and templates. Recommended: GitHub Issue Summarizer, PRD Generator, or Shift Handoff Note Formatter.</p>
+        </div>
+        <div class="tier-result-box advanced" id="tier-advanced">
+          <h4>🚀 Advanced</h4>
+          <p>You're comfortable enough to add scripts, multi-step workflows, and API integrations. Go for Tier 3 or propose your own project. Recommended: PR Review Bot, Multi-Source Research Skill, or Deal Screening Memo.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Agenda -->
+<section id="agenda">
+  <div class="container">
+    <p class="section-label">Agenda</p>
+    <h2 class="section-title">2.5 hours, packed tight.</h2>
+    <div class="agenda">
+      <div class="agenda-item">
+        <div class="agenda-time">7:15 PM</div>
+        <div class="agenda-content">
+          <h4>Arrive &amp; Settle</h4>
+          <p>Grab drinks, find a seat, informal chat</p>
+        </div>
+      </div>
+      <div class="agenda-item">
+        <div class="agenda-time">7:30 PM</div>
+        <div class="agenda-content">
+          <h4>Kickoff</h4>
+          <p>Frame the session, set expectations, introduce the Chef &amp; Recipe model</p>
+        </div>
+      </div>
+      <div class="agenda-item">
+        <div class="agenda-time">7:45 PM</div>
+        <div class="agenda-content">
+          <h4>Training Sprint</h4>
+          <p>Fast-paced beginner training — build a skill live, learn the anatomy, get unblocked</p>
+        </div>
+      </div>
+      <div class="agenda-item">
+        <div class="agenda-time">8:15 PM</div>
+        <div class="agenda-content">
+          <h4>Project Selection</h4>
+          <p>Pick your tier or propose your own project</p>
+        </div>
+      </div>
+      <div class="agenda-item">
+        <div class="agenda-time">8:20 PM</div>
+        <div class="agenda-content">
+          <h4>🛠 Build Time</h4>
+          <p>40 minutes of hands-on building. Help circulates.</p>
+        </div>
+      </div>
+      <div class="agenda-item">
+        <div class="agenda-time">9:00 PM</div>
+        <div class="agenda-content">
+          <h4>Demo Showcase</h4>
+          <p>Lightning demos — 60-90 seconds each. Show what you built.</p>
+        </div>
+      </div>
+      <div class="agenda-item">
+        <div class="agenda-time">9:25 PM</div>
+        <div class="agenda-content">
+          <h4>Wrap-up</h4>
+          <p>Key takeaways, next steps, how to keep building</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- What to Bring -->
+<section id="bring">
+  <div class="container">
+    <p class="section-label">What to Bring</p>
+    <h2 class="section-title">Almost nothing.</h2>
+    <p class="section-desc">No terminal experience needed. No pre-requisite courses. Bring your laptop and an idea.</p>
+    <div class="bring-grid">
+      <div class="bring-item">
+        <span class="icon">💻</span>
+        <div>
+          <h4>Laptop</h4>
+          <p>With working internet and a browser</p>
+        </div>
+      </div>
+      <div class="bring-item">
+        <span class="icon">🔑</span>
+        <div>
+          <h4>Free Account</h4>
+          <p>Sign up at <a href="https://campclaw.ai">campclaw.ai</a> (sandbox, no install) — takes 30 seconds</p>
+        </div>
+      </div>
+      <div class="bring-item">
+        <span class="icon">💭</span>
+        <div>
+          <h4>An annoying task</h4>
+          <p>Something repetitive you do manually. That's your first project.</p>
+        </div>
+      </div>
+      <div class="bring-item">
+        <span class="icon">📝</span>
+        <div>
+          <h4>Code editor (optional)</h4>
+          <p>VS Code recommended but any text editor works</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RSVP -->
+<section id="rsvp">
+  <div class="container">
+    <div class="roi-banner">
+      <h2>Ready to build?</h2>
+      <p style="margin-bottom:24px;">Tuesday, April 7th · 7:15 PM CDT · Highwood, IL</p>
+      <a href="https://lu.ma" class="btn btn-primary" target="_blank" rel="noopener">RSVP on Luma</a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="footer-links">
+      <a href="https://github.com/shertokj/nerds-like-me" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://clawhub.com" target="_blank" rel="noopener">ClawHub</a>
+      <a href="https://agentskills.io" target="_blank" rel="noopener">AgentSkills Spec</a>
+      <a href="battle-plan.html">Battle Plan (facilitator)</a>
+    </div>
+    <p>Nerds Like Me · AI Agent Skills Hackathon · 2026</p>
+  </div>
+</footer>
+
+<script>
+// Tier selector — minimal vanilla JS
+const selections = {};
+document.querySelectorAll('.tier-option').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const q = btn.dataset.q;
+    document.querySelectorAll(`.tier-option[data-q="${q}"]`).forEach(b => b.classList.remove('selected'));
+    btn.classList.add('selected');
+    selections[q] = btn.dataset.v;
+    if (selections['1'] && selections['2']) {
+      const results = document.querySelector('.tier-results');
+      results.classList.add('visible');
+      document.querySelectorAll('.tier-result-box').forEach(b => b.style.display = 'none');
+      let tier;
+      if (selections['1'] === 'no') tier = selections['2'] === 'no' ? 'beginner' : 'intermediate';
+      else tier = selections['2'] === 'yes' ? 'advanced' : 'intermediate';
+      document.getElementById('tier-' + tier).style.display = 'block';
     }
-
-    function toggleFacilitator() {
-      const content = document.getElementById('facilitator-content');
-      const arrow = document.getElementById('facilitator-arrow');
-      if (content.style.maxHeight) {
-        content.style.maxHeight = null;
-        arrow.style.transform = null;
-      } else {
-        content.style.maxHeight = content.scrollHeight + 'px';
-        arrow.style.transform = 'rotate(180deg)';
-      }
-    }
-  </script>
-
+  });
+});
+</script>
 </body>
 </html>
