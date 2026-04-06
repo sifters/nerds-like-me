@@ -538,18 +538,22 @@ pre code {
 <!-- ==================== SLIDE 8: Anatomy of a Skill ==================== -->
 <section data-notes="Walk through each section. Emphasize: 10 lines of markdown CAN be a working skill. Don't overthink it. The trigger description is the most important part — that's how the agent knows when to use it.">
   <h2>Anatomy of a Skill</h2>
-  <pre><code><span class="annotation"># SKILL.md — The only file you need</span>
+  <pre><code><span class="annotation">weekly-status-report/</span>        <span class="muted">← skill folder</span>
+├── SKILL.md                  <span class="muted">← required</span>
+├── scripts/                  <span class="muted">← optional</span>
+├── references/               <span class="muted">← optional</span>
+└── assets/                   <span class="muted">← optional</span>
 
-<span class="accent">**Name:**</span> Weekly Status Report
-<span class="accent">**Trigger:**</span> When I say "weekly report" or every Friday at 4pm
-<span class="accent">**Description:**</span> Summarizes my work for the week
+<span class="annotation"># SKILL.md content:</span>
+<span class="accent">name:</span> weekly-status-report
+<span class="accent">description:</span> Summarize my work for the week
 
 ## Steps
 1. Read my calendar for meetings attended
 2. Scan my notes for completed tasks
-3. Draft a 3-bullet summary in my voice
+3. Draft a 3-bullet summary
 4. Ask me to approve before finalizing</code></pre>
-  <p style="text-align:center; font-size:0.9em; margin-top:0.5em; color:var(--white);">10 lines in your SKILL.md can be a working skill. <span class="muted">Don't overthink it.</span></p>
+  <p style="text-align:center; font-size:0.9em; margin-top:0.5em; color:var(--white);">Most beginner skills are just a folder with one SKILL.md. <span class="muted">Add files as you need them.</span></p>
 </section>
 
 <!-- ==================== SLIDE 9: The 5 Skill Killers ==================== -->
