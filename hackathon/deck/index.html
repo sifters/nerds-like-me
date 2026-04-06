@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pop-up Hackathon: AI Agent Skills</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/black.css">
+<style>
+:root {
+  --bg: #0a0a0a;
+  --text: #fafafa;
+  --accent: #3b82f6;
+  --accent-dim: rgba(59,130,246,0.15);
+  --gray: #a1a1aa;
+  --card-bg: #141414;
+  --border: #27272a;
+}
+.reveal { font-family: 'Inter', sans-serif; color: var(--text); }
+.reveal-viewport { background: var(--bg); }
+.reveal h1, .reveal h2, .reveal h3 { font-weight: 800; letter-spacing: -0.02em; color: var(--text); }
+.reveal h1 { font-size: 3em; }
+.reveal h2 { font-size: 2.2em; }
+.reveal h3 { font-size: 1.5em; }
+.reveal .hl { color: var(--accent); }
+.reveal .dim { color: var(--gray); }
+.reveal code, .reveal pre { font-family: 'JetBrains Mono', monospace; }
+.reveal pre { font-size: 0.7em; width: 100%; box-shadow: none; background: #111 !important; border: 1px solid var(--border); border-radius: 12px; padding: 1em; }
+.reveal pre code { padding: 0; }
+.reveal .slide-number { color: var(--gray); font-family: 'JetBrains Mono', monospace; background: var(--card-bg); padding: 4px 12px; border-radius: 20px; }
+.reveal .progress { color: var(--accent); }
+.reveal section { text-align: left; padding-left: 8%; padding-right: 8%; }
+.reveal section.center { text-align: center; }
+.reveal section.center * { text-align: center; }
+.reveal section.center .left-align { text-align: left; }
+.tier-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; padding: 1em 1.2em; margin: 0.4em 0; }
+.tier-card.beginner { border-left: 3px solid #22c55e; }
+.tier-card.intermediate { border-left: 3px solid #eab308; }
+.tier-card.advanced { border-left: 3px solid #f97316; }
+.tag { display: inline-block; font-size: 0.55em; background: var(--accent-dim); color: var(--accent); padding: 2px 10px; border-radius: 20px; font-weight: 600; vertical-align: middle; }
+.timeline { display: flex; flex-wrap: wrap; gap: 0.5em; margin-top: 0.8em; }
+.timeline .step { background: var(--card-bg); border: 1px solid var(--border); border-radius: 8px; padding: 0.6em 1em; flex: 1 1 auto; min-width: 120px; }
+.timeline .step .time { color: var(--accent); font-weight: 700; font-size: 0.7em; }
+.timeline .step .label { font-size: 0.8em; color: var(--text); margin-top: 2px; }
+.gotcha { display: flex; gap: 0.7em; margin: 0.5em 0; align-items: flex-start; }
+.gotcha .num { color: var(--accent); font-weight: 700; font-family: 'JetBrains Mono', monospace; min-width: 1.5em; }
+trouble { display: table; width: 100%; margin-top: 0.5em; }
+trouble .row { display: table-row; }
+trouble .cell { display: table-cell; padding: 0.3em 0.6em; border-bottom: 1px solid var(--border); font-size: 0.8em; vertical-align: top; }
+trouble .cell:first-child { color: #f87171; font-weight: 600; width: 35%; }
+trouble .cell:last-child { width: 65%; }
+.resource { display: block; color: var(--accent); text-decoration: none; margin: 0.3em 0; font-size: 0.9em; }
+.resource:hover { text-decoration: underline; }
+.flow-step { opacity: 0; transform: translateX(-20px); }
+.flow-step.visible { opacity: 1; transform: translateX(0); transition: all 0.5s ease; }
+.logo-text { font-size: 0.7em; color: var(--gray); font-weight: 400; letter-spacing: 0.1em; }
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 2em; }
+.two-col > * { align-self: start; }
+@media (max-width: 600px) {
+  .reveal h1 { font-size: 2em; }
+  .reveal h2 { font-size: 1.6em; }
+  .reveal pre { font-size: 0.5em; }
+  .two-col { grid-template-columns: 1fr; }
+  .timeline { flex-direction: column; }
+}
+</style>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+<!-- SLIDE 1: Title -->
+<section class="center" data-background="#0a0a0a">
+  <p class="logo-text" style="margin-bottom: 1em;">NERDS LIKE ME PRESENTS</p>
+  <h1>Pop-up Hackathon<br><span class="hl">AI Agent Skills</span></h1>
+  <p style="color: var(--gray); margin-top: 0.8em; font-size: 1.1em;">
+    Tuesday, April 7th, 2026 &nbsp;·&nbsp; 7:15 PM<br>
+    Broken Tee Brewco, Highwood, IL
+  </p>
+  <aside class="notes">
+    Welcome everyone. This is a Nerds Like Me event. We're going from zero to building a working AI skill in about 2 hours. No experience needed. By the end of tonight, you'll have something real that you built yourself.
+  </aside>
+</section>
+
+<!-- SLIDE 2: Welcome & Ground Rules -->
+<section>
+  <h2>Welcome</h2>
+  <p style="font-size: 1.3em; color: var(--accent); margin: 0.8em 0;">"Teach AI to do the work you already do"</p>
+  <ul style="margin-top: 1em; line-height: 1.8;">
+    <li>No AI or coding experience needed</li>
+    <li>We'll build something real tonight — something you can use Monday</li>
+    <li>Ask questions anytime — there are no dumb questions</li>
+    <li>Fail fast, iterate faster</li>
+  </ul>
+  <aside class="notes">
+    Set the tone: this is not a lecture. We're here to build. Everyone will leave with a working skill. The goal is to ship something, not something perfect.
+  </aside>
+</section>
+
+<!-- SLIDE 3: Who's in the room -->
+<section>
+  <h2>Who's in the Room</h2>
+  <p style="color: var(--gray); margin: 0.5em 0;">We've got a packed room tonight:</p>
+  <div style="display: flex; flex-wrap: wrap; gap: 0.6em; margin-top: 0.8em;">
+    <span class="tag">🏥 Nurses</span>
+    <span class="tag">💼 Wealth Advisors</span>
+    <span class="tag">📊 Analysts</span>
+    <span class="tag">🛡️ Security Analysts</span>
+    <span class="tag">🏗️ Engineers</span>
+    <span class="tag">🚀 Founders</span>
+    <span class="tag">📈 IB Associates</span>
+    <span class="tag">🎓 Recruiters</span>
+    <span class="tag">🏠 Real Estate</span>
+    <span class="tag">🎓 Learning Designers</span>
+  </div>
+  <p style="margin-top: 1em; color: var(--gray);">Different jobs, same problem: <span class="hl">repetitive tasks that eat your time.</span></p>
+  <aside class="notes">
+    Point out the diversity — this is intentional. Skills work for every role. Don't feel like you need to be technical. The nurses and wealth advisors here are going to build skills just as useful as the engineers.
+  </aside>
+</section>
+
+<!-- SLIDE 4: Agenda -->
+<section>
+  <h2>Tonight's Agenda</h2>
+  <div class="timeline">
+    <div class="step"><span class="time">7:15</span><span class="label">🍺 Socialize</span></div>
+    <div class="step"><span class="time">7:30</span><span class="label">🎤 Kickoff</span></div>
+    <div class="step"><span class="time">7:45</span><span class="label">⚡ Training Sprint</span></div>
+    <div class="step"><span class="time">8:15</span><span class="label">🎯 Pick Project</span></div>
+    <div class="step"><span class="time">8:20</span><span class="label">🔨 Build Time</span></div>
+    <div class="step"><span class="time">9:00</span><span class="label">🚀 Lightning Demos</span></div>
+    <div class="step"><span class="time">9:25</span><span class="label">🏁 Wrap-Up</span></div>
+  </div>
+  <p style="color: var(--gray); margin-top: 1em; font-size: 0.85em;">2.5 hours total. We move fast.</p>
+  <aside class="notes">
+    Walk through the timeline briefly. Emphasize the pace — this is a sprint, not a marathon. The bulk of the time is hands-on building. Training is just enough to get you dangerous.
+  </aside>
+</section>
+
+<!-- SLIDE 5: What is an AI Skill? -->
+<section>
+  <h2>What is an AI Skill?</h2>
+  <div class="two-col">
+    <div>
+      <p style="font-size: 1.2em; margin-top: 0.5em;">A <span class="hl">recipe</span> tells a chef how to cook.</p>
+      <p style="font-size: 1.2em;">A <span class="hl">skill</span> tells an AI how to work.</p>
+      <div style="margin-top: 1.2em; padding: 0.8em; background: var(--card-bg); border-radius: 10px; border-left: 3px solid #eab308;">
+        <p style="font-size: 0.85em; color: var(--gray);"><strong style="color: #eab308;">⚠️ Important:</strong> Skills are <em>non-deterministic</em> — you may get slightly different output each run. That's normal. Treat skills as rough drafts that get better with iteration.</p>
+      </div>
+    </div>
+    <div style="text-align: center;">
+      <p style="font-size: 4em;">👨‍🍳 → 📋 → 🤖</p>
+      <p style="color: var(--gray); font-size: 0.8em;">Chef + Recipe = Consistent Dish<br>Agent + Skill = Focused Output</p>
+    </div>
+  </div>
+  <aside class="notes">
+    The Chef & Recipe model is the mental model for tonight. The AI is the chef — it already knows how to work. Your skill is the recipe — it tells the chef exactly what to make. Without skills, the chef guesses. With skills, it executes. Caveat: unlike real recipes, AI is non-deterministic. Same recipe, slightly different dish each time. That's fine — iterate.
+  </aside>
+</section>
+
+<!-- SLIDE 6: Live Demo -->
+<section class="center">
+  <p style="color: var(--gray); font-size: 1em; margin-bottom: 0.5em;">LIVE DEMO</p>
+  <h1 style="font-size: 2.5em;">Weekly Status Update <span class="hl">Skill</span></h1>
+  <p style="font-size: 1.5em; color: var(--accent); margin-top: 1em;">→ Building it live. Right now.</p>
+  <p style="color: var(--gray); margin-top: 1.5em; font-size: 0.9em;">Something everyone does — nurses, wealth advisors, analysts, founders.</p>
+  <aside class="notes">
+    Switch to OpenClaw. Build the weekly-status-update skill live. Create folder, write SKILL.md, test it. Emphasize: from zero to working in under 5 minutes. Talk through each step as you do it. Keep it conversational.
+  </aside>
+</section>
+
+<!-- SLIDE 7: How We Just Built That -->
+<section>
+  <h2>How We Just Built That</h2>
+  <p style="color: var(--gray); margin-bottom: 0.8em;">The Record-Transcribe-Refine method:</p>
+  <div style="margin-top: 0.5em;">
+    <div class="flow-step" style="margin: 0.8em 0; padding: 0.7em; background: var(--card-bg); border-radius: 8px;">
+      <span class="hl" style="font-weight: 700;">1. Record</span> — How do you do this task right now?
+    </div>
+    <div class="flow-step" style="margin: 0.8em 0; padding: 0.7em; background: var(--card-bg); border-radius: 8px;">
+      <span class="hl" style="font-weight: 700;">2. Transcribe</span> — Turn that into plain language instructions
+    </div>
+    <div class="flow-step" style="margin: 0.8em 0; padding: 0.7em; background: var(--card-bg); border-radius: 8px;">
+      <span class="hl" style="font-weight: 700;">3. Refine</span> — Test it. Fix gaps. Iterate until it matches what you'd do
+    </div>
+  </div>
+  <p style="margin-top: 1em; font-size: 0.85em; color: var(--gray);">💡 You're not inventing from scratch — you're documenting what you already know.</p>
+  <aside class="notes">
+    This is the beginner onboarding path. Don't start from a blank page — start from something you already do. For the hackathon: think of something annoying you do manually. That's your first skill. Record-Transcribe-Refine works even if you just describe the steps out loud and have AI transcribe them.
+  </aside>
+</section>
+
+<!-- SLIDE 8: Anatomy of a Skill -->
+<section>
+  <h2>Anatomy of a Skill</h2>
+  <p style="color: var(--gray); margin-bottom: 0.5em;">A working skill can be <span class="hl">10 lines of markdown</span>.</p>
+  <pre><code>---
+name: my-skill
+description: What this skill does and when to
+  trigger it. This is how the agent finds it.
+---
+
+# My Skill
+
+Steps to execute when this skill is active:
+
+1. Do X
+2. Then do Y
+3. Return result in format Z</code></pre>
+  <p style="margin-top: 0.8em; font-size: 0.85em; color: var(--gray);">📁 Skills live in: <code>~/.openclaw/workspace/skills/&lt;name&gt;/SKILL.md</code></p>
+  <aside class="notes">
+    Two parts: YAML frontmatter (metadata — name and description) and markdown body (the actual instructions). The description is critical — it's how the agent discovers and decides to use your skill. The markdown body is the recipe. Keep it focused, step-by-step. Optionally add scripts/, references/, and assets/ folders for more advanced skills.
+  </aside>
+</section>
+
+<!-- SLIDE 9: Gotchas -->
+<section>
+  <h2>Common Gotchas 🚧</h2>
+  <div class="gotcha"><span class="num">01</span><span>Skills should <span class="hl">DO</span> things, not <em>TEACH</em> things. Give execution steps, not a Wikipedia article.</span></div>
+  <div class="gotcha"><span class="num">02</span><span>Keep scope narrow. <span class="hl">One skill, one job.</span></span></div>
+  <div class="gotcha"><span class="num">03</span><span><span class="hl">Test early</span> with real inputs. Don't wait for perfection.</span></div>
+  <div class="gotcha"><span class="num">04</span><span>The <span class="hl">description field</span> is how the agent discovers your skill. Make it specific.</span></div>
+  <div class="gotcha"><span class="num">05</span><span>First output won't be perfect — <span class="hl">iterate on the instructions</span>, not the prompt.</span></div>
+  <aside class="notes">
+    Walk through each one briefly. The biggest mistake is #1 — people write a textbook instead of a recipe. Keep it actionable. #4 is the most common reason skills don't trigger — vague descriptions.
+  </aside>
+</section>
+
+<!-- SLIDE 10: When Things Go Wrong -->
+<section>
+  <h2>When Things Go Wrong 🔧</h2>
+  <trouble>
+    <div class="row"><span class="cell">Skill not triggering</span><span class="cell">Description doesn't match your request → Make the description more specific</span></div>
+    <div class="row"><span class="cell">Output format is wrong</span><span class="cell">Instructions too vague → Add explicit format examples and constraints</span></div>
+    <div class="row"><span class="cell">Agent ignores the skill</span><span class="cell">Description doesn't cover this use case → Rewrite to match the words you'd naturally say</span></div>
+    <div class="row"><span class="cell">Output is way off</span><span class="cell">Scope too broad → Narrow the skill to one specific job</span></div>
+  </trouble>
+  <p style="margin-top: 1em; color: var(--gray); font-size: 0.85em;">💡 90% of problems come down to: description matching or instruction clarity.</p>
+  <aside class="notes">
+    Quick troubleshooting guide. Most issues boil down to two things: the agent can't find your skill (description problem) or it found it but the instructions aren't clear enough. Fix those two things first before anything else.
+  </aside>
+</section>
+
+<!-- SLIDE 11: What Skills Can't Do -->
+<section class="center">
+  <h2>What Skills Can't Do</h2>
+  <div style="max-width: 600px; margin: 1.5em auto 0; text-align: left;">
+    <p style="margin: 0.6em 0;">❌ Guarantee consistent output (non-deterministic)</p>
+    <p style="margin: 0.6em 0;">❌ Execute on their own without an agent runtime</p>
+    <p style="margin: 0.6em 0;">❌ Replace human judgment</p>
+    <p style="margin: 0.6em 0;">❌ Run without you checking the output</p>
+  </div>
+  <div style="margin-top: 1.5em; padding: 1em; background: var(--accent-dim); border-radius: 10px;">
+    <p style="font-size: 1.2em;"><span class="hl">Force-multipliers</span>, not autonomous workers.</p>
+  </div>
+  <aside class="notes">
+    Be honest about limitations. Skills are tools, not replacements. They make you faster, but you still need to review, verify, and apply judgment. The non-determinism is a feature, not a bug — but it means you always need a human in the loop.
+  </aside>
+</section>
+
+<!-- SLIDE 12: Pick Your Project -->
+<section>
+  <h2>Pick Your Project</h2>
+  <p style="color: var(--gray); font-size: 0.9em; margin-bottom: 0.6em;">Be honest with yourself. "Do I write code regularly?"</p>
+  <div class="tier-card beginner">
+    <p style="margin: 0;"><span class="hl" style="font-weight: 700;">🌱 Beginner</span> <span style="color: var(--gray); font-size: 0.85em;">— No technical background</span></p>
+    <p style="font-size: 0.85em; margin: 0.3em 0;">Client Follow-Up Email Formatter · Weekly Status Update · Meeting Notes Formatter</p>
+  </div>
+  <div class="tier-card intermediate">
+    <p style="margin: 0;"><span class="hl" style="font-weight: 700;">⚡ Intermediate</span> <span style="color: var(--gray); font-size: 0.85em;">— Some tech background</span></p>
+    <p style="font-size: 0.85em; margin: 0.3em 0;">GitHub Issue Summarizer · Email Drafter · Config Validator · Weather Briefing</p>
+  </div>
+  <div class="tier-card advanced">
+    <p style="margin: 0;"><span class="hl" style="font-weight: 700;">🚀 Take-Home</span> <span style="color: var(--gray); font-size: 0.85em;">— Start tonight, finish after</span></p>
+    <p style="font-size: 0.85em; margin: 0.3em 0;">PR Review Bot · Data Pipeline Skill · Multi-Skill Orchestrator</p>
+  </div>
+  <aside class="notes">
+    Encourage everyone to start at Tier 1 if they've never built a skill before. It's better to ship something simple than to get stuck trying something hard. Experienced folks can jump to Tier 2 or propose their own project (Wildcard). Tier 3 is for people who want to keep going after tonight.
+  </aside>
+</section>
+
+<!-- SLIDE 13: Build Time -->
+<section class="center">
+  <p style="color: var(--gray); font-size: 1em; margin-bottom: 0.3em;">🔨</p>
+  <h1 style="font-size: 3em;">Build Time</h1>
+  <p style="font-size: 1.5em; color: var(--accent);">40 minutes. Start building.</p>
+  <div style="margin-top: 1.5em; text-align: left; max-width: 550px; margin-left: auto; margin-right: auto;">
+    <p>1. Open OpenClaw (campclaw.ai or local install)</p>
+    <p>2. Create your skill folder: <code>mkdir -p ~/.openclaw/workspace/skills/my-skill</code></p>
+    <p>3. Write SKILL.md</p>
+    <p>4. Test it with <code>/new</code></p>
+    <p>5. Iterate</p>
+  </div>
+  <p style="margin-top: 1.5em; color: var(--gray);">🙋 <span class="hl">Raise your hand</span> if you need help. I'll come to you.</p>
+  <aside class="notes">
+    This is the main event. Circulate the room. Prioritize Tier 1 folks — they need the most help. Encourage experienced attendees to help tablemates. Announce time checks at 20 min and 35 min. If someone is stuck, suggest they drop a tier rather than spin their wheels. The three commands they need: mkdir, cd, and their editor.
+  </aside>
+</section>
+
+<!-- SLIDE 14: Lightning Demos -->
+<section class="center">
+  <p style="color: var(--gray); font-size: 1em; margin-bottom: 0.3em;">🚀</p>
+  <h1>Lightning Demos</h1>
+  <p style="font-size: 1.3em; color: var(--accent); margin: 0.5em 0;">Show us what you built!</p>
+  <div style="margin-top: 1.2em; text-align: left; max-width: 500px; margin-left: auto; margin-right: auto;">
+    <p>⏱️ <span class="hl">60 seconds each.</span> Ruthless timer.</p>
+    <p style="margin-top: 0.5em;">Tell us:</p>
+    <p style="margin-left: 1em;">1. What it does</p>
+    <p style="margin-left: 1em;">2. What you learned</p>
+    <p style="margin-left: 1em;">3. What broke</p>
+  </div>
+  <p style="margin-top: 1em; color: var(--gray); font-size: 0.85em;">No slides. Just the skill working. Failure stories welcome. 🎉</p>
+  <aside class="notes">
+    Go around the room. Keep it moving. Celebrate failures — "what didn't work" is as valuable as "what worked." Group by tier if running short on time. Note patterns/themes for wrap-up.
+  </aside>
+</section>
+
+<!-- SLIDE 15: What's Next -->
+<section>
+  <h2>What's Next</h2>
+  <p style="color: var(--gray); margin-bottom: 0.8em;">Tonight was the surface. <span class="hl">The rabbit hole goes deep.</span></p>
+  <div style="margin-top: 0.5em;">
+    <div class="flow-step" style="margin: 0.6em 0; padding: 0.6em; background: var(--card-bg); border-radius: 8px;">
+      <span class="hl" style="font-weight: 700;">🔗 Skill Chaining</span> — Compose complex workflows from simple, reusable skills
+    </div>
+    <div class="flow-step" style="margin: 0.6em 0; padding: 0.6em; background: var(--card-bg); border-radius: 8px;">
+      <span class="hl" style="font-weight: 700;">🤖 Sub-Agents</span> — Spawn background agents to handle research, coding, analysis in parallel
+    </div>
+    <div class="flow-step" style="margin: 0.6em 0; padding: 0.6em; background: var(--card-bg); border-radius: 8px;">
+      <span class="hl" style="font-weight: 700;">📦 ClawHub</span> — Publish your skills for the community to use
+    </div>
+  </div>
+  <p style="margin-top: 0.8em; color: var(--gray); font-size: 0.85em;">These aren't covered tonight, but they're where this goes. NLM will be hosting follow-up events.</p>
+  <aside class="notes">
+    Just a teaser. Don't go deep — plant seeds. Skill chaining lets you compose workflows. Sub-agents let you parallelize. ClawHub lets you share. All of these will be covered in future NLM events. The goal is to leave people wanting more.
+  </aside>
+</section>
+
+<!-- SLIDE 16: Resources -->
+<section>
+  <h2>Resources</h2>
+  <a href="https://openclaw.ai" class="resource">📖 OpenClaw Docs — openclaw.ai</a>
+  <a href="https://campclaw.ai" class="resource">🎮 CampClaw Sandbox — campclaw.ai</a>
+  <a href="https://clawhub.com" class="resource">📦 ClawHub Skill Marketplace — clawhub.com</a>
+  <a href="https://agentskills.io" class="resource">📋 AgentSkills Spec — agentskills.io</a>
+  <a href="https://github.com/shertokj/nerds-like-me" class="resource">🐙 Tonight's Repo — github.com/shertokj/nerds-like-me</a>
+  <a href="https://play.aidailybrief.ai/episodes/skills-master-class/" class="resource">🎧 Skills Master Class (Audio) — AI Daily Brief</a>
+  <aside class="notes">
+    Point people to these after the event. CampClaw is the easiest way to keep playing — no install needed. The GitHub repo will have tonight's materials and example skills.
+  </aside>
+</section>
+
+<!-- SLIDE 17: Thank You -->
+<section class="center">
+  <p class="logo-text" style="margin-bottom: 0.5em;">NERDS LIKE ME</p>
+  <h1>Thank You! 🎉</h1>
+  <p style="font-size: 1.2em; color: var(--accent); margin-top: 0.5em;">You just built an AI skill.</p>
+  <p style="color: var(--gray); margin-top: 1.5em;">
+    Keep building. Ship to ClawHub. Come to the next one.
+  </p>
+  <div style="margin-top: 2em; display: flex; justify-content: center; gap: 2em;">
+    <a href="https://x.com/NerdsLikeMe" style="color: var(--gray); text-decoration: none;">𝕏 @NerdsLikeMe</a>
+    <a href="https://github.com/shertokj/nerds-like-me" style="color: var(--gray); text-decoration: none;">GitHub</a>
+  </div>
+  <aside class="notes">
+    Wrap up. Thank everyone for coming. Remind them to keep building and share skills on ClawHub. Tease the next NLM event. Take a group photo if possible.
+  </aside>
+</section>
+
+</div><!-- /slides -->
+</div><!-- /reveal -->
+
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/notes/notes.js"></script>
+<script>
+Reveal.initialize({
+  hash: true,
+  slideNumber: true,
+  progress: true,
+  transition: 'fade',
+  transitionSpeed: 'default',
+  width: 1100,
+  height: 700,
+  margin: 0.06,
+  plugins: [RevealNotes],
+  // Auto-animate the flow-step items
+  autoAnimateDuration: 0.5
+});
+
+// Animate flow-step items on slide change
+Reveal.on('slidechanged', event => {
+  const steps = event.currentSlide.querySelectorAll('.flow-step');
+  steps.forEach((step, i) => {
+    setTimeout(() => step.classList.add('visible'), 200 + i * 400);
+  });
+});
+</script>
+</body>
+</html>
