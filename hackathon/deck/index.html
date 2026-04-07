@@ -30,63 +30,7 @@
 }
 
 .reveal-viewport {
-  background: var(--navy);
-  position: relative;
-  overflow: hidden;
-}
-
-/* Global video background for all slides */
-.reveal-viewport::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-  pointer-events: none;
-  background: linear-gradient(135deg, #0a0e29 0%, #111638 40%, #0d1225 70%, #0a0e29 100%);
-  animation: bgShift 20s ease-in-out infinite alternate;
-}
-
-@keyframes bgShift {
-  0% { background-position: 0% 0%; }
-  100% { background-position: 100% 100%; }
-}
-
-/* Static animated grain texture overlay */
-.reveal-viewport::after {
-  content: '';
-  position: fixed;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  z-index: 0;
-  pointer-events: none;
-  opacity: 0.03;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
-  animation: grainDrift 8s steps(10) infinite;
-}
-
-@keyframes grainDrift {
-  0% { transform: translate(0, 0); }
-  10% { transform: translate(-5%, -10%); }
-  20% { transform: translate(-15%, 5%); }
-  30% { transform: translate(7%, -25%); }
-  40% { transform: translate(-5%, 25%); }
-  50% { transform: translate(-15%, 10%); }
-  60% { transform: translate(15%, 0%); }
-  70% { transform: translate(0%, 15%); }
-  80% { transform: translate(3%, 35%); }
-  90% { transform: translate(-10%, 10%); }
-  100% { transform: translate(0, 0); }
-}
-
-/* Ensure slides render above viewport pseudo-elements */
-.reveal .slides {
-  position: relative;
-  z-index: 1;
+  background: linear-gradient(145deg, #0a0e29 0%, #0f1535 30%, #111a3a 60%, #0a0e29 100%);
 }
 
 .reveal {
