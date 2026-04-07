@@ -47,21 +47,15 @@
 }
 
 .reveal-viewport {
-  background: linear-gradient(135deg, #0a0e29 0%, #0f1535 25%, #121d40 50%, #0e1430 75%, #0a0e29 100%);
-  background-size: 400% 400%;
-  animation: gradientShift 30s ease infinite;
-}
-
-@keyframes gradientShift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 100%; }
-  100% { background-position: 0% 50%; }
+  background: transparent;
 }
 
 .reveal {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
   font-weight: 400;
   color: var(--text);
+  position: relative;
+  z-index: 1;
 }
 
 .reveal .slides {
@@ -738,48 +732,21 @@ pre code {
   .lightning-format { flex-direction: column; align-items: center; gap: 12px; }
 }
 
-/* Video background for title/closing slides */
-.video-slide {
-  position: relative;
-  overflow: hidden;
-}
-
-.video-slide video {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
-  transform: translate(-50%, -50%);
-  object-fit: cover;
-  z-index: -2;
-}
-
-.video-slide::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(10, 14, 41, 0.55);
-  z-index: -1;
-}
+/* Video bg is now a fixed viewport element; overlay controlled by JS */
 </style>
 </head>
 <body>
 
+<div id="bg-video-container" style="position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;overflow:hidden;pointer-events:none;">
+  <video id="bg-video" src="bg-video.mp4" autoplay loop muted playsinline style="width:100%;height:100%;object-fit:cover;"></video>
+  <div id="bg-overlay" style="position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(10,14,41,0.35);transition:background 0.8s ease;"></div>
+</div>
 <div class="reveal">
 <div class="slides">
 
 <!-- ==================== SLIDE 1: Title ==================== -->
 <section data-notes="Welcome everyone. Set the tone: this is hands-on, not lecture. You'll leave tonight with a working AI skill. NLM is about building in public together.">
-  <div class="title-slide video-slide">
-    <video autoplay muted loop playsinline>
-      <source src="bg-video.mp4" type="video/mp4">
-    </video>
+  <div class="title-slide">
     <img src="nlm-logo.png" class="title-logo" alt="NLM Logo">
     <h1>Agent Skills <span class="secondary">Hackathon</span></h1>
     <p class="subtitle">Build Your First AI Skill in 40 Minutes</p>
@@ -1209,10 +1176,7 @@ skills/
 
 <!-- ==================== SLIDE 20: Thank You ==================== -->
 <section data-notes="Thank everyone for showing up. Remind them: the Discord / GitHub is where the community continues. Next event TBD — stay tuned.">
-  <div class="title-slide video-slide">
-    <video autoplay muted loop playsinline>
-      <source src="bg-video.mp4" type="video/mp4">
-    </video>
+  <div class="title-slide">
     <img src="nlm-logo.png" class="closing-logo" alt="NLM Logo">
     <h1>Thank You</h1>
     <p style="font-size:1.2em; color:var(--white);">Go build something useful.</p>
@@ -1256,6 +1220,30 @@ Reveal.on('slidechanged', (event) => {
 
 // Initialize counter on load
 document.getElementById('slide-counter').textContent = '1 / ' + Reveal.getTotalSlides();
+
+// Video background: play on title/closing, pause + dim on content slides
+(function() {
+  const bgVideo = document.getElementById('bg-video');
+  const bgOverlay = document.getElementById('bg-overlay');
+
+  function updateVideoState(slideIndex) {
+    const isContentSlide = slideIndex > 0 && slideIndex < 21;
+    if (isContentSlide) {
+      bgVideo.pause();
+      bgOverlay.style.background = 'rgba(10, 14, 41, 0.82)';
+    } else {
+      bgVideo.play();
+      bgOverlay.style.background = 'rgba(10, 14, 41, 0.35)';
+    }
+  }
+
+  // Set initial state (slide 0 = title)
+  updateVideoState(0);
+
+  Reveal.on('slidechanged', function(event) {
+    updateVideoState(event.indexh);
+  });
+})();
 
 // Build Timer
 let timerInterval = null;
