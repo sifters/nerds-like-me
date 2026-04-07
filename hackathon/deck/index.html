@@ -47,6 +47,7 @@
 }
 
 .reveal-viewport {
+  overflow-x: hidden;
   background: transparent;
 }
 
@@ -81,7 +82,7 @@
 }
 
 .reveal h1 { font-size: 2.8em; line-height: 1.1; margin-bottom: 0.4em; }
-.reveal h2 { font-size: 1.7em; line-height: 1.2; margin-bottom: 0.3em; }
+.reveal h2 { font-size: 1.5em; line-height: 1.2; margin-bottom: 0.3em; }
 .reveal h3 { font-size: 1.4em; margin-bottom: 0.4em; }
 
 .reveal p, .reveal li {
@@ -716,7 +717,7 @@ pre code {
 .acard {
   display: flex;
   flex-direction: column;
-  padding: 4px 7px;
+  padding: 3px 6px;
   background: rgba(0, 212, 255, 0.04);
   border-left: 2px solid var(--cyan);
   border-radius: 0 4px 4px 0;
@@ -724,6 +725,7 @@ pre code {
 }
 
 .aname {
+  max-width: 100%;
   font-weight: 700;
   color: var(--white);
   font-size: 0.8em;
@@ -732,7 +734,9 @@ pre code {
   text-overflow: ellipsis;
 }
 
+
 .askills {
+  overflow: hidden;
   color: var(--text-muted);
   font-size: 0.65em;
   line-height: 1.3;
@@ -1088,38 +1092,45 @@ pre code {
   </p>
 </section>
 
-<!-- ==================== SLIDE 13: Your Skill Suggestions (1/2) ==================== -->
-<section class="dense" data-notes="Each person has personalized skill suggestions based on their RSVP profiles. Full list with descriptions in the participant guide.">
-  <h2 style="font-size:1.8em; margin-bottom:0.4em;">Your Skill Suggestions</h2>
-  <p class="muted" style="font-size:0.7em; margin-bottom:0.3em;">Based on your backgrounds · Full details in participant guide</p>
+<!-- ==================== SLIDE 13: Your Skill Suggestions (1/3) ==================== -->
+<section class="dense" data-notes="Personalized skill suggestions based on RSVP profiles. Full details in participant guide.">
+  <h2 style="font-size:1.5em; margin-bottom:0.3em;">Your Skill Suggestions</h2>
+  <p class="muted" style="font-size:0.65em; margin-bottom:0.2em;">Based on your backgrounds · Full details in participant guide</p>
   <div class="attendee-grid-v2">
     <div class="acard"><span class="aname">Alex Kuznetsof</span><span class="askills">Webflow Component Generator · Client Proposal Drafter</span></div>
     <div class="acard"><span class="aname">Andy Lester</span><span class="askills">Conference Talk Proposal · Legacy Code Analyzer</span></div>
     <div class="acard"><span class="aname">Andriy Minenko</span><span class="askills">Report Request Formatter · Data Dictionary Generator</span></div>
     <div class="acard"><span class="aname">Anil Bhat</span><span class="askills">Data Strategy Brief · Pipeline Health Checker</span></div>
     <div class="acard"><span class="aname">Syeda Hussain</span><span class="askills">Security Incident Report · Vulnerability Summary</span></div>
-    <div class="acard"><span class="aname">Jennifer Chuh</span><span class="askills">Shift Handoff Note Formatter · Patient Education Summary</span></div>
-    <div class="acard"><span class="aname">Omar Bennani</span><span class="askills">PRD First Draft Generator · A/B Test Result Summarizer</span></div>
-    <div class="acard"><span class="aname">Krissy Crandell</span><span class="askills">Outreach Email Personalizer · Program FAQ Generator</span></div>
-    <div class="acard"><span class="aname">Xavier Estrada</span><span class="askills">Client Onboarding Checklist · Ticket Triage Skill</span></div>
-    <div class="acard"><span class="aname">Eugene Rinaldi</span><span class="askills">SIEM Alert Triage Summary · Threat Intel Brief Generator</span></div>
-    <div class="acard"><span class="aname">Yousuf Kadir</span><span class="askills">Board Deck Draft Generator · Financial Model QA Checker</span></div>
+    <div class="acard"><span class="aname">Jennifer Chuh</span><span class="askills">Shift Handoff Note · Patient Education Summary</span></div>
+    <div class="acard"><span class="aname">Omar Bennani</span><span class="askills">PRD First Draft · A/B Test Result Summarizer</span></div>
   </div>
 </section>
 
-<!-- ==================== SLIDE 13b: Your Skill Suggestions (2/2) ==================== -->
+<!-- ==================== SLIDE 13b: Your Skill Suggestions (2/3) ==================== -->
 <section class="dense" data-notes="Continued skill suggestions.">
-  <h2 style="font-size:1.8em; margin-bottom:0.4em;">Your Skill Suggestions <span class="muted" style="font-size:0.6em;">(cont.)</span></h2>
+  <h2 style="font-size:1.5em; margin-bottom:0.3em;">Your Skill Suggestions <span class="muted" style="font-size:0.55em;">(cont.)</span></h2>
   <div class="attendee-grid-v2">
+    <div class="acard"><span class="aname">Krissy Crandell</span><span class="askills">Outreach Email Personalizer · Program FAQ Generator</span></div>
+    <div class="acard"><span class="aname">Xavier Estrada</span><span class="askills">Client Onboarding Checklist · Ticket Triage Skill</span></div>
+    <div class="acard"><span class="aname">Eugene Rinaldi</span><span class="askills">SIEM Alert Triage · Threat Intel Brief Generator</span></div>
+    <div class="acard"><span class="aname">Yousuf Kadir</span><span class="askills">Board Deck Draft · Financial Model QA Checker</span></div>
     <div class="acard"><span class="aname">David Shechtman</span><span class="askills">Deal Screening Memo · IC Memo Drafter</span></div>
-    <div class="acard"><span class="aname">Scott Wolf</span><span class="askills">Regulatory Brief Summarizer · Client Follow-Up Email</span></div>
-    <div class="acard"><span class="aname">Dominic Lopez</span><span class="askills">Daily Operations Check-In · Vendor Communication Drafter</span></div>
-    <div class="acard"><span class="aname">Ethan Hafner</span><span class="askills">Prospect Research Brief · Client Meeting Notes Formatter</span></div>
+    <div class="acard"><span class="aname">Scott Wolf</span><span class="askills">Regulatory Brief Summarizer · Client Follow-Up</span></div>
+    <div class="acard"><span class="aname">Dominic Lopez</span><span class="askills">Daily Ops Check-In · Vendor Communication Drafter</span></div>
+  </div>
+</section>
+
+<!-- ==================== SLIDE 13c: Your Skill Suggestions (3/3) ==================== -->
+<section class="dense" data-notes="Continued skill suggestions.">
+  <h2 style="font-size:1.5em; margin-bottom:0.3em;">Your Skill Suggestions <span class="muted" style="font-size:0.55em;">(cont.)</span></h2>
+  <div class="attendee-grid-v2">
+    <div class="acard"><span class="aname">Ethan Hafner</span><span class="askills">Prospect Research Brief · Client Meeting Notes</span></div>
     <div class="acard"><span class="aname">Jonathan Kreft</span><span class="askills">Deal Teaser Drafter · CIM Section Generator</span></div>
-    <div class="acard"><span class="aname">Eric Markin</span><span class="askills">Team Weekly Round-Up · Client Review Meeting Prep</span></div>
-    <div class="acard"><span class="aname">Sam Gallo</span><span class="askills">Scenario Framework Structurer · Macro Regime Indicator</span></div>
-    <div class="acard"><span class="aname">Kelly Gross</span><span class="askills">Learning Objectives Writer · Course Outline Generator</span></div>
-    <div class="acard"><span class="aname">Raj Jha</span><span class="askills">Discovery Call Brief Generator · Deal Qualification Scorer</span></div>
+    <div class="acard"><span class="aname">Eric Markin</span><span class="askills">Team Weekly Round-Up · Client Review Prep</span></div>
+    <div class="acard"><span class="aname">Sam Gallo</span><span class="askills">Scenario Framework Structurer · Macro Regime</span></div>
+    <div class="acard"><span class="aname">Kelly Gross</span><span class="askills">Learning Objectives Writer · Course Outline</span></div>
+    <div class="acard"><span class="aname">Raj Jha</span><span class="askills">Discovery Call Brief · Deal Qualification Scorer</span></div>
     <div class="acard"><span class="aname">Jordaan Williams</span><span class="askills">Competitive Battlecard · Launch Checklist Generator</span></div>
     <div class="acard"><span class="aname">Shirl Cathy Wang</span><span class="askills">System Config Documenter · Troubleshooting Playbook</span></div>
   </div>
