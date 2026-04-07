@@ -12,16 +12,15 @@
 2. [What Is an AI Agent Skill?](#2-what-is-an-ai-agent-skill)
 3. [Record-Transcribe-Refine: The Beginner Workflow](#3-record-transcribe-refine-the-beginner-workflow)
 4. [SKILL.md Anatomy](#4-skillmd-anatomy)
-5. [Setting Up OpenClaw](#5-setting-up-openclaw)
-6. [Project Ideas by Tier](#6-project-ideas-by-tier)
-7. [The 5 Skill Killers](#7-the-5-skill-killers)
+6. [Project Ideas by Tier](#5-project-ideas-by-tier)
+7. [The 5 Skill Killers](#6-the-5-skill-killers)
 8. [When Things Go Wrong — Troubleshooting](#8-when-things-go-wrong--troubleshooting)
-9. [What Skills Can't Do](#9-what-skills-cant-do)
-10. [Advanced Topics](#10-advanced-topics) — incl. The Manager Mindset
-11. [Real-World Inspiration](#11-real-world-inspiration) — Claire Vo & Jesse Genet deep dives
-12. [Resources](#12-resources) — categorized links
-13. [Share Your Skill](#13-share-your-skill)
-14. [Cheat Sheet](#14-cheat-sheet)
+9. [What Skills Can't Do](#8-what-skills-cant-do)
+10. [Advanced Topics](#9-advanced-topics) — incl. The Manager Mindset
+11. [Real-World Inspiration](#10-real-world-inspiration) — Claire Vo & Jesse Genet deep dives
+12. [Resources](#11-resources) — categorized links
+13. [Share Your Skill](#12-share-your-skill)
+14. [Cheat Sheet](#13-cheat-sheet)
 
 ---
 
@@ -343,7 +342,6 @@ Best,
 
 ---
 
-## 5. Setting Up OpenClaw
 
 ### What You Need
 
@@ -409,7 +407,7 @@ If those commands work, you're ready to build.
 
 ---
 
-## 6. Project Ideas by Tier
+## 5. Project Ideas by Tier
 
 Pick the tier that matches your experience level. If you've never built a skill before, start at **Tier 1** no matter how technical you are in other areas.
 
@@ -541,7 +539,7 @@ Uses `sessions_spawn` to delegate subtasks (research, analysis, drafting) to spe
 
 ---
 
-## 7. The 5 Skill Killers
+## 6. The 5 Skill Killers
 
 From the [Skills Master Class](https://play.aidailybrief.ai/episodes/skills-master-class/) — these are the five most common reasons skills fail. Learn to spot them and avoid them.
 
@@ -594,7 +592,7 @@ From the [Skills Master Class](https://play.aidailybrief.ai/episodes/skills-mast
 
 ---
 
-## 8. When Things Go Wrong — Troubleshooting
+## 7. When Things Go Wrong — Troubleshooting
 
 ### Skill Not Triggering
 
@@ -656,7 +654,7 @@ From the [Skills Master Class](https://play.aidailybrief.ai/episodes/skills-mast
 
 ---
 
-## 9. What Skills Can't Do
+## 8. What Skills Can't Do
 
 Set expectations correctly. Skills are powerful, but they have limits.
 
@@ -676,7 +674,7 @@ Set expectations correctly. Skills are powerful, but they have limits.
 
 ---
 
-## 10. Advanced Topics
+## 9. Advanced Topics
 
 These are **not** covered in tonight's training, but they're where the rabbit hole leads. If you get hooked on skills, these are the next patterns to explore.
 
@@ -751,7 +749,7 @@ A skill whose job is to help you build other skills. "Skill about skills." This 
 
 ---
 
-## 11. Real-World Inspiration
+## 10. Real-World Inspiration
 
 ### Claire Vo: 9 Agents Run Her Life
 
@@ -810,7 +808,7 @@ If the answer is yes — if you'd take the skill's output and send it, file it, 
 
 ---
 
-## 12. Resources
+## 11. Resources
 
 ### Getting Started (Watch These First)
 
@@ -847,7 +845,7 @@ If the answer is yes — if you'd take the skill's output and send it, file it, 
 
 ---
 
-## 13. Share Your Skill
+## 12. Share Your Skill
 
 You built something useful tonight. Share it with the Nerds Like Me community.
 
@@ -880,7 +878,7 @@ skills/
 
 ---
 
-## 14. Cheat Sheet
+## 13. Cheat Sheet
 
 ### SKILL.md Template (Copy-Paste Ready)
 
