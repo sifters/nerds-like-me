@@ -270,8 +270,8 @@ pre code {
 .fix-table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 0.78em;
-  margin-top: 1em;
+  font-size: 0.68em;
+  margin-top: 0.5em;
 }
 
 .fix-table th {
@@ -283,7 +283,7 @@ pre code {
 }
 
 .fix-table td {
-  padding: 12px 16px;
+  padding: 6px 10px;
   border-bottom: 1px solid rgba(255,255,255,0.1);
   vertical-align: top;
 }
@@ -1069,11 +1069,11 @@ pre code {
       <tr><th>Symptom</th><th>Likely Cause</th><th>Fix</th></tr>
     </thead>
     <tbody>
-      <tr><td>Agent ignores the skill</td><td>Trigger too vague</td><td>Be specific: "When I paste an email, summarize in 3 bullets"</td></tr>
-      <tr><td>Output is wrong format</td><td>No format specified</td><td>Add exact structure: "Return as JSON with keys: summary, action_items"</td></tr>
+      <tr><td>Agent ignores the skill</td><td>Trigger too vague</td><td>Be specific in your trigger</td></tr>
+      <tr><td>Output is wrong format</td><td>No format specified</td><td>Define exact output format</td></tr>
       <tr><td>Agent hallucinates</td><td>Missing context</td><td>Add examples of good output to the skill</td></tr>
       <tr><td>Too slow</td><td>Task too broad</td><td>Split into multiple focused skills</td></tr>
-      <tr><td>Browser actions fail</td><td>Web automation is unreliable</td><td>Use APIs instead — works across ALL AI tools</td></tr>
+      <tr><td>Browser actions fail</td><td>Web automation is unreliable</td><td>Use APIs instead of web automation</td></tr>
     </tbody>
   </table>
 </section>
