@@ -31,10 +31,66 @@
 
 .reveal-viewport {
   background: var(--navy);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Global video background for all slides */
+.reveal-viewport::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  background: linear-gradient(135deg, #0a0e29 0%, #111638 40%, #0d1225 70%, #0a0e29 100%);
+  animation: bgShift 20s ease-in-out infinite alternate;
+}
+
+@keyframes bgShift {
+  0% { background-position: 0% 0%; }
+  100% { background-position: 100% 100%; }
+}
+
+/* Static animated grain texture overlay */
+.reveal-viewport::after {
+  content: '';
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  animation: grainDrift 8s steps(10) infinite;
+}
+
+@keyframes grainDrift {
+  0% { transform: translate(0, 0); }
+  10% { transform: translate(-5%, -10%); }
+  20% { transform: translate(-15%, 5%); }
+  30% { transform: translate(7%, -25%); }
+  40% { transform: translate(-5%, 25%); }
+  50% { transform: translate(-15%, 10%); }
+  60% { transform: translate(15%, 0%); }
+  70% { transform: translate(0%, 15%); }
+  80% { transform: translate(3%, 35%); }
+  90% { transform: translate(-10%, 10%); }
+  100% { transform: translate(0, 0); }
+}
+
+/* Ensure slides render above viewport pseudo-elements */
+.reveal .slides {
+  position: relative;
+  z-index: 1;
 }
 
 .reveal {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
   font-weight: 400;
   color: var(--text);
 }
@@ -54,7 +110,7 @@
 }
 
 .reveal h1, .reveal h2, .reveal h3 {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
   font-weight: 700;
   text-transform: none;
   letter-spacing: -0.02em;
@@ -88,7 +144,7 @@
 .muted { color: var(--text-muted); }
 
 code, .reveal code {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'JetBrains Mono', 'SF Mono', 'Fira Code', 'Cascadia Code', Consolas, monospace;
   background: rgba(0, 212, 255, 0.08);
   border: 1px solid rgba(0, 212, 255, 0.15);
   padding: 2px 8px;
@@ -196,7 +252,7 @@ pre code {
 }
 
 .timeline-item .time {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'JetBrains Mono', 'SF Mono', 'Fira Code', 'Cascadia Code', Consolas, monospace;
   font-size: 0.8em;
   color: var(--cyan);
   font-weight: 600;
@@ -251,7 +307,7 @@ pre code {
 .fix-table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 0.75em;
+  font-size: 0.78em;
   margin-top: 1em;
 }
 
@@ -328,7 +384,7 @@ pre code {
 }
 
 .step .step-num {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'JetBrains Mono', 'SF Mono', 'Fira Code', 'Cascadia Code', Consolas, monospace;
   font-size: 1.6em;
   font-weight: 800;
   color: var(--cyan);
@@ -366,7 +422,7 @@ pre code {
   font-size: 3em;
   font-weight: 800;
   color: var(--orange);
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'JetBrains Mono', 'SF Mono', 'Fira Code', 'Cascadia Code', Consolas, monospace;
   margin: 0.4em 0;
 }
 
@@ -375,7 +431,7 @@ pre code {
   padding: 12px 40px;
   font-size: 1em;
   font-weight: 700;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
   color: var(--navy);
   background: var(--cyan);
   border: none;
@@ -556,7 +612,7 @@ pre code {
   font-size: 0.8em;
   color: var(--orange);
   margin-bottom: 4px;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'JetBrains Mono', 'SF Mono', 'Fira Code', 'Cascadia Code', Consolas, monospace;
 }
 
 .anatomy-code-sm {
@@ -652,7 +708,7 @@ pre code {
 }
 
 .build-timer {
-  font-size: 3em;
+  font-size: 3.2em;
   transition: font-size 0.5s ease, color 0.5s ease;
 }
 
@@ -700,7 +756,7 @@ pre code {
   font-weight: 800;
   font-size: 0.9em;
   border-radius: 50%;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'JetBrains Mono', 'SF Mono', 'Fira Code', 'Cascadia Code', Consolas, monospace;
 }
 
 .lightning-label {
@@ -740,7 +796,7 @@ pre code {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(10, 14, 41, 0.7);
+  background: rgba(10, 14, 41, 0.55);
   z-index: -1;
 }
 </style>
@@ -951,11 +1007,11 @@ pre code {
 <section class="dense" data-notes="These are the patterns that make skills fail. Go through each briefly. The most common one: trying to teach the AI instead of giving it a task.">
   <h2>The 5 Skill Killers</h2>
   <ul>
-    <li class="fragment"><strong>Teaching instead of doing</strong> — "Explain what a report is" vs "Write my weekly report"</li>
-    <li class="fragment"><strong>Scope too broad</strong> — One skill, one job. Split big tasks into chained skills</li>
-    <li class="fragment"><strong>No examples</strong> — Show what good output looks like, not just what to do</li>
-    <li class="fragment"><strong>No output format</strong> — Specify structure: "3 bullets, past tense, under 50 words"</li>
-    <li class="fragment"><strong>Testing with fake inputs</strong> — Use your real data from day one</li>
+    <li><strong>Teaching instead of doing</strong> — "Explain what a report is" vs "Write my weekly report"</li>
+    <li><strong>Scope too broad</strong> — One skill, one job. Split big tasks into chained skills</li>
+    <li><strong>No examples</strong> — Show what good output looks like, not just what to do</li>
+    <li><strong>No output format</strong> — Specify structure: "3 bullets, past tense, under 50 words"</li>
+    <li><strong>Testing with fake inputs</strong> — Use your real data from day one</li>
   </ul>
 </section>
 
