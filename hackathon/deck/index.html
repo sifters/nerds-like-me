@@ -9,13 +9,23 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/reveal.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/theme/black.min.css">
 <style>
+.video-slide h1,
+.video-slide h2,
+.video-slide h3 {
+  text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+}
+.video-slide p,
+.video-slide span {
+  text-shadow: 0 1px 4px rgba(0,0,0,0.5);
+}
+
 :root {
   --navy: #0a0e29;
   --navy-light: #111638;
   --cyan: #00d4ff;
   --orange: #ff8c00;
   --text: #e8eaf0;
-  --text-muted: #8890a4;
+  --text-muted: #9ca3b8;
   --white: #ffffff;
 }
 
@@ -35,6 +45,10 @@
 
 .reveal .slides section {
   padding: 40px 60px;
+}
+
+.reveal .slides section.dense {
+  padding: 32px 48px;
   font-size: 28px;
   line-height: 1.5;
 }
@@ -250,8 +264,8 @@ pre code {
 }
 
 .fix-table td {
-  padding: 8px 12px;
-  border-bottom: 1px solid rgba(255,255,255,0.06);
+  padding: 12px 16px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
   vertical-align: top;
 }
 
@@ -304,6 +318,7 @@ pre code {
 }
 
 .step {
+  position: relative;
   flex: 1;
   text-align: center;
   padding: 24px 16px;
@@ -375,6 +390,14 @@ pre code {
   transform: scale(1.05);
 }
 
+.timer-btn:not(.timer-active) {
+  animation: timerPulse 2s ease-in-out infinite;
+}
+
+.timer-btn.timer-active {
+  animation: none;
+}
+
 @keyframes timerPulse {
   0% { transform: scale(1); }
   50% { transform: scale(1.1); }
@@ -399,7 +422,7 @@ pre code {
 /* Closing */
 .closing-logo {
   width: auto;
-  height: 64px;
+  height: 80px;
   max-width: 320px;
   margin-bottom: 0.5em;
 }
@@ -575,7 +598,7 @@ pre code {
 /* Attendee grid v2 - ultra-compact 4-col */
 .attendee-grid-v2 {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 5px 8px;
   margin-top: 0.3em;
 }
@@ -593,7 +616,7 @@ pre code {
 .aname {
   font-weight: 700;
   color: var(--white);
-  font-size: 0.52em;
+  font-size: 0.8em;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -601,7 +624,7 @@ pre code {
 
 .askills {
   color: var(--text-muted);
-  font-size: 0.42em;
+  font-size: 0.65em;
   line-height: 1.3;
 }
 
@@ -807,22 +830,13 @@ pre code {
 </section>
 
 <!-- ==================== SLIDE 5: What is an AI Skill? ==================== -->
-<section data-notes="The chef/recipe analogy is key. The AI is the chef — it already knows HOW to cook. The skill is the recipe — it tells the chef WHAT to cook. Emphasize: non-deterministic is normal. Skills are force multipliers, not autonomous workers. Anthropic's framing: build skills, not agents. Skills are the scalable abstraction.">
+<section data-notes="The chef/recipe analogy is key. The AI is the chef — it already knows HOW to cook. The skill is the recipe — it tells the chef WHAT to cook. Three principles to mention verbally: (1) Non-deterministic is normal — like a real employee, results vary slightly each time. (2) Force multiplier, not autonomous worker. (3) Build skills, not agents — skills are the scalable abstraction.">
   <h2>What is an AI Skill?</h2>
-  <p class="accent" style="font-size:1.1em; font-weight:600; margin-bottom:1em;">A folder containing a SKILL.md that teaches an AI agent how to perform a specific task.</p>
-  <div class="two-col">
-    <div class="col">
-      <p style="color:var(--white); font-weight:600;">Think of it like…</p>
-      <p>The AI is a <span class="orange">chef</span>.<br>It already knows how to cook.</p>
-      <p>The skill is the <span class="accent">recipe</span>.<br>It tells the chef what to make.</p>
-    </div>
-    <div class="col">
-      <ul>
-        <li><strong>Non-deterministic is normal</strong> — like a real employee, results vary slightly each time</li>
-        <li><strong>Force multiplier</strong>, not autonomous worker</li>
-        <li><strong>Build skills, not agents</strong> — skills are the scalable abstraction</li>
-      </ul>
-    </div>
+  <p class="accent" style="font-size:1.3em; font-weight:600; margin-bottom:1.5em;">A folder containing a SKILL.md that teaches an AI agent how to perform a specific task.</p>
+  <div class="centered" style="margin-top:1.5em;">
+    <p style="font-size:1.2em; color:var(--white); font-weight:600;">Think of it like…</p>
+    <p style="font-size:1.3em; margin-top:0.8em;">The AI is a <span class="orange">chef</span>. It already knows how to cook.</p>
+    <p style="font-size:1.3em; margin-top:0.6em;">The skill is the <span class="accent">recipe</span>. It tells the chef what to make.</p>
   </div>
 </section>
 
@@ -879,19 +893,26 @@ pre code {
   </p>
 </section>
 
-<!-- ==================== SLIDE 9: Anatomy of a Skill ==================== -->
-<section data-notes="Walk through each section. The description field is how the agent discovers the skill — it's the most important part. Show the full Input/Steps/Output/Rules structure. Emphasize: description must include keywords a user would naturally say.">
-  <h2>Anatomy of a Skill</h2>
+<!-- ==================== SLIDE 9: Skill Folder Anatomy ==================== -->
+<section data-notes="Show the folder tree. Emphasize: it's just a folder with a text file. That's it. No code, no build step.">
+  <h2>Skill Folder Anatomy</h2>
+  <p style="font-size:0.9em; margin-bottom:1.2em;">It's just a folder with a text file. That's it.</p>
+  <div class="anatomy-folder" style="max-width:500px;">
+    <div class="anatomy-folder-title">📁 my-skill/</div>
+    <pre class="anatomy-tree"><code>my-skill/
+├── <span class="accent">SKILL.md</span>       ← required (this is everything)
+├── scripts/       ← optional helper scripts
+├── references/    ← optional docs & examples
+└── assets/        ← optional images, templates</code></pre>
+  </div>
+  <p style="margin-top:1.5em; font-size:0.85em; color:var(--text-muted);">No code. No build step. No package.json. Just a markdown file in a folder.</p>
+</section>
+
+<!-- ==================== SLIDE 9b: Inside SKILL.md ==================== -->
+<section class="dense" data-notes="Walk through each section. The description field is how the agent discovers the skill — it's the most important part. Show the full Input/Steps/Output/Rules structure. Emphasize: description must include keywords a user would naturally say.">
+  <h2>Inside SKILL.md</h2>
   <div class="anatomy-grid">
     <div class="anatomy-left">
-      <div class="anatomy-folder">
-        <div class="anatomy-folder-title">📁 Folder Structure</div>
-        <pre class="anatomy-tree"><code>my-skill/
-├── <span class="accent">SKILL.md</span>       ← required
-├── scripts/       ← optional
-├── references/    ← optional
-└── assets/        ← optional</code></pre>
-      </div>
       <div class="anatomy-frontmatter">
         <div class="anatomy-section-label">YAML Frontmatter</div>
         <pre class="anatomy-code-sm"><code><span class="accent">---</span>
@@ -907,7 +928,7 @@ pre code {
     <div class="anatomy-right">
       <div class="anatomy-body-section">
         <div class="anatomy-section-label">## Input</div>
-        <p class="anatomy-body-desc">What the user provides — notes, files, URLs, context</p>
+        <p class="anatomy-body-desc">What the user provides: notes, files, URLs, context</p>
       </div>
       <div class="anatomy-body-section">
         <div class="anatomy-section-label">## Steps</div>
@@ -915,7 +936,7 @@ pre code {
       </div>
       <div class="anatomy-body-section">
         <div class="anatomy-section-label">## Output Format</div>
-        <p class="anatomy-body-desc">Exact template — show what "done" looks like</p>
+        <p class="anatomy-body-desc">Exact template: show what "done" looks like</p>
       </div>
       <div class="anatomy-body-section">
         <div class="anatomy-section-label">## Rules</div>
@@ -923,23 +944,23 @@ pre code {
       </div>
     </div>
   </div>
-  <p class="anatomy-bottom-callout"><span class="accent">Key:</span> Include the exact words a user would say in the description. The agent only sees the description at first — full instructions load on demand.</p>
+  <p class="anatomy-bottom-callout"><span class="accent">Key:</span> Include the exact words a user would say in the description. The agent only sees the description at first; full instructions load on demand.</p>
 </section>
 
 <!-- ==================== SLIDE 10: The 5 Skill Killers ==================== -->
-<section data-notes="These are the patterns that make skills fail. Go through each briefly. The most common one: trying to teach the AI instead of giving it a task.">
+<section class="dense" data-notes="These are the patterns that make skills fail. Go through each briefly. The most common one: trying to teach the AI instead of giving it a task.">
   <h2>The 5 Skill Killers</h2>
   <ul>
-    <li><strong>Teaching instead of doing</strong> — "Explain what a report is" vs "Write my weekly report"</li>
-    <li><strong>Scope too broad</strong> — One skill, one job. Split big tasks into chained skills</li>
-    <li><strong>No examples</strong> — Show what good output looks like, not just what to do</li>
-    <li><strong>No output format</strong> — Specify structure: "3 bullets, past tense, under 50 words"</li>
-    <li><strong>Testing with fake inputs</strong> — Use your real data from day one</li>
+    <li class="fragment"><strong>Teaching instead of doing</strong> — "Explain what a report is" vs "Write my weekly report"</li>
+    <li class="fragment"><strong>Scope too broad</strong> — One skill, one job. Split big tasks into chained skills</li>
+    <li class="fragment"><strong>No examples</strong> — Show what good output looks like, not just what to do</li>
+    <li class="fragment"><strong>No output format</strong> — Specify structure: "3 bullets, past tense, under 50 words"</li>
+    <li class="fragment"><strong>Testing with fake inputs</strong> — Use your real data from day one</li>
   </ul>
 </section>
 
 <!-- ==================== SLIDE 11: When Things Go Wrong ==================== -->
-<section data-notes="Quick reference for common issues. Point people here during build time if they get stuck. The #1 issue is vague triggers.">
+<section class="dense" data-notes="Quick reference for common issues. Point people here during build time if they get stuck. The #1 issue is vague triggers.">
   <h2>When Things Go Wrong</h2>
   <table class="fix-table">
     <thead>
@@ -969,10 +990,10 @@ pre code {
   </p>
 </section>
 
-<!-- ==================== SLIDE 13: Your Skill Suggestions ==================== -->
-<section data-notes="Each person has personalized skill suggestions based on their RSVP profiles. Full list with descriptions in the participant guide.">
+<!-- ==================== SLIDE 13: Your Skill Suggestions (1/2) ==================== -->
+<section class="dense" data-notes="Each person has personalized skill suggestions based on their RSVP profiles. Full list with descriptions in the participant guide.">
   <h2 style="font-size:1.8em; margin-bottom:0.4em;">Your Skill Suggestions</h2>
-  <p class="muted" style="font-size:0.55em; margin-bottom:0.3em;">Based on your backgrounds · Full details in participant guide</p>
+  <p class="muted" style="font-size:0.7em; margin-bottom:0.3em;">Based on your backgrounds · Full details in participant guide</p>
   <div class="attendee-grid-v2">
     <div class="acard"><span class="aname">Alex Kuznetsof</span><span class="askills">Webflow Component Generator · Client Proposal Drafter</span></div>
     <div class="acard"><span class="aname">Andy Lester</span><span class="askills">Conference Talk Proposal · Legacy Code Analyzer</span></div>
@@ -983,6 +1004,13 @@ pre code {
     <div class="acard"><span class="aname">Omar Bennani</span><span class="askills">PRD First Draft Generator · A/B Test Result Summarizer</span></div>
     <div class="acard"><span class="aname">Krissy Crandell</span><span class="askills">Outreach Email Personalizer · Program FAQ Generator</span></div>
     <div class="acard"><span class="aname">Xavier Estrada</span><span class="askills">Client Onboarding Checklist · Ticket Triage Skill</span></div>
+  </div>
+</section>
+
+<!-- ==================== SLIDE 13b: Your Skill Suggestions (2/2) ==================== -->
+<section class="dense" data-notes="Continued skill suggestions.">
+  <h2 style="font-size:1.8em; margin-bottom:0.4em;">Your Skill Suggestions <span class="muted" style="font-size:0.6em;">(cont.)</span></h2>
+  <div class="attendee-grid-v2">
     <div class="acard"><span class="aname">David Shechtman</span><span class="askills">Deal Screening Memo · IC Memo Drafter</span></div>
     <div class="acard"><span class="aname">Scott Wolf</span><span class="askills">Regulatory Brief Summarizer · Client Follow-Up Email</span></div>
     <div class="acard"><span class="aname">Dominic Lopez</span><span class="askills">Daily Operations Check-In · Vendor Communication Drafter</span></div>
@@ -1081,7 +1109,7 @@ pre code {
 </section>
 
 <!-- ==================== SLIDE 18: Resources ==================== -->
-<section data-notes="People will want to go deeper after tonight. Point them here. The two YouTube links under Getting Started are the most important — suggest watching those first.">
+<section class="dense" data-notes="People will want to go deeper after tonight. Point them here. The two YouTube links under Getting Started are the most important — suggest watching those first.">
   <h2>Resources</h2>
   <div class="resource-grid">
     <div>
@@ -1219,6 +1247,7 @@ function startTimer() {
     clearInterval(timerInterval);
     timerRunning = false;
     btn.textContent = 'Start Timer';
+    btn.classList.remove('timer-active');
     display.textContent = '40:00';
     display.classList.remove('timer-ended', 'timer-warning', 'timer-danger', 'timer-done');
     display.style.animation = '';
@@ -1230,6 +1259,7 @@ function startTimer() {
   
   timerRunning = true;
   btn.textContent = 'Reset';
+  btn.classList.add('timer-active');
   let totalSeconds = totalDuration;
   
   timerInterval = setInterval(() => {
